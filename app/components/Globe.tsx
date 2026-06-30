@@ -8,6 +8,7 @@ export default function Globe() {
 
   useEffect(() => {
     let phi = 0;
+    let rafId: number;
     let globe: ReturnType<typeof createGlobe>;
 
     if (canvasRef.current) {
@@ -25,25 +26,29 @@ export default function Globe() {
         markerColor: [0.08, 0.35, 0.9],
         glowColor: [0.6, 0.75, 1.0],
         markers: [
-          { location: [51.5074, -0.1278], size: 0.06 },   // London
-          { location: [48.8566, 2.3522], size: 0.05 },    // Paris
-          { location: [52.52, 13.405], size: 0.05 },      // Berlin
-          { location: [40.7128, -74.006], size: 0.07 },   // New York
-          { location: [35.6762, 139.6503], size: 0.05 },  // Tokyo
-          { location: [1.3521, 103.8198], size: 0.05 },   // Singapore
-          { location: [25.2048, 55.2708], size: 0.04 },   // Dubai
-          { location: [-23.5505, -46.6333], size: 0.04 }, // São Paulo
-          { location: [55.7558, 37.6173], size: 0.04 },   // Moscow
-          { location: [22.3193, 114.1694], size: 0.05 },  // Hong Kong
+          { location: [51.5074, -0.1278], size: 0.06 },
+          { location: [48.8566, 2.3522], size: 0.05 },
+          { location: [52.52, 13.405], size: 0.05 },
+          { location: [40.7128, -74.006], size: 0.07 },
+          { location: [35.6762, 139.6503], size: 0.05 },
+          { location: [1.3521, 103.8198], size: 0.05 },
+          { location: [25.2048, 55.2708], size: 0.04 },
+          { location: [-23.5505, -46.6333], size: 0.04 },
+          { location: [55.7558, 37.6173], size: 0.04 },
+          { location: [22.3193, 114.1694], size: 0.05 },
         ],
-        onRender(state) {
-          state.phi = phi;
-          phi += 0.003;
-        },
       });
+
+      const animate = () => {
+        phi += 0.003;
+        globe.update({ phi });
+        rafId = requestAnimationFrame(animate);
+      };
+      rafId = requestAnimationFrame(animate);
     }
 
     return () => {
+      cancelAnimationFrame(rafId);
       try { globe?.destroy(); } catch (_) {}
     };
   }, []);
