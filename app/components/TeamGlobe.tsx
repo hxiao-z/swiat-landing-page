@@ -85,7 +85,7 @@ export default function TeamGlobe() {
               center={center}
               minZoom={1}
               maxZoom={12}
-              onMoveEnd={({ zoom: z, coordinates }) => {
+              onMoveEnd={({ zoom: z, coordinates }: { zoom: number; coordinates: [number, number] }) => {
                 setZoom(z);
                 setCenter(coordinates as [number, number]);
               }}
