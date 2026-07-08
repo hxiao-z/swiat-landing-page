@@ -32,9 +32,9 @@ function drawCube(ctx: CanvasRenderingContext2D, x: number, y: number, s: number
   ctx.lineTo(corners[2][0], corners[2][1] - h);
   ctx.lineTo(corners[3][0], corners[3][1] - h);
   ctx.closePath();
-  ctx.fillStyle = `rgba(78, 205, 196, ${alpha * 0.55})`;
+  ctx.fillStyle = `rgba(122, 192, 205, ${alpha * 0.55})`;
   ctx.fill();
-  ctx.strokeStyle = `rgba(78, 205, 196, ${alpha * 0.9})`;
+  ctx.strokeStyle = `rgba(122, 192, 205, ${alpha * 0.9})`;
   ctx.lineWidth = 0.7;
   ctx.stroke();
 
@@ -47,7 +47,7 @@ function drawCube(ctx: CanvasRenderingContext2D, x: number, y: number, s: number
   ctx.closePath();
   ctx.fillStyle = `rgba(30, 90, 120, ${alpha * 0.4})`;
   ctx.fill();
-  ctx.strokeStyle = `rgba(78, 205, 196, ${alpha * 0.6})`;
+  ctx.strokeStyle = `rgba(122, 192, 205, ${alpha * 0.6})`;
   ctx.lineWidth = 0.7;
   ctx.stroke();
 
@@ -60,12 +60,12 @@ function drawCube(ctx: CanvasRenderingContext2D, x: number, y: number, s: number
   ctx.closePath();
   ctx.fillStyle = `rgba(20, 60, 90, ${alpha * 0.35})`;
   ctx.fill();
-  ctx.strokeStyle = `rgba(78, 205, 196, ${alpha * 0.5})`;
+  ctx.strokeStyle = `rgba(122, 192, 205, ${alpha * 0.5})`;
   ctx.lineWidth = 0.7;
   ctx.stroke();
 }
 
-export default function NetworkVisual() {
+export default function NetworkVisual({ blockCount = 22 }: { blockCount?: number }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -81,7 +81,7 @@ export default function NetworkVisual() {
     canvas.height = H * window.devicePixelRatio;
     ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
 
-    const BLOCK_COUNT = 22;
+    const BLOCK_COUNT = blockCount;
     const MAX_DIST = 160;
 
     const blocks: Block[] = Array.from({ length: BLOCK_COUNT }, () => ({
@@ -119,7 +119,7 @@ export default function NetworkVisual() {
             ctx.beginPath();
             ctx.moveTo(blocks[i].x, blocks[i].y);
             ctx.lineTo(blocks[j].x, blocks[j].y);
-            ctx.strokeStyle = `rgba(78, 205, 196, ${alpha})`;
+            ctx.strokeStyle = `rgba(122, 192, 205, ${alpha})`;
             ctx.lineWidth = 0.8;
             ctx.stroke();
             ctx.setLineDash([]);

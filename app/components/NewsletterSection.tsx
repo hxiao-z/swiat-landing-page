@@ -51,7 +51,7 @@ export default function NewsletterSection() {
   };
 
   return (
-    <section className="bg-[#07111f] border-t border-white/5 py-20 px-6">
+    <section id="newsletter" className="bg-[#07111f] border-t border-white/5 py-20 px-6">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -63,14 +63,14 @@ export default function NewsletterSection() {
           <div className="flex flex-col lg:flex-row gap-10">
             {/* Left — heading + form */}
             <div className="flex-1">
-              <p className="text-xs font-semibold text-teal-400 uppercase tracking-widest mb-3">Stay informed</p>
+              <p className="text-xs font-semibold text-[#7AC0CD] uppercase tracking-widest mb-3">Stay informed</p>
               <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">SWIAT Newsletter</h2>
               <p className="text-zinc-400 text-sm leading-relaxed mb-8">
                 Sign up for the SWIAT Newsletter to stay up to date and keep track of all recent developments and upcoming events.
               </p>
 
               {submitted ? (
-                <div className="flex items-center gap-3 text-teal-400 text-sm">
+                <div className="flex items-center gap-3 text-[#7AC0CD] text-sm">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
@@ -85,11 +85,11 @@ export default function NewsletterSection() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="your@email.com"
-                      className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-zinc-500 text-sm focus:outline-none focus:border-teal-500/60 transition-all"
+                      className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-zinc-500 text-sm focus:outline-none focus:border-[#7AC0CD]/60 transition-all"
                     />
                     <button
                       type="submit"
-                      className="bg-teal-500 hover:bg-teal-400 text-white font-semibold px-6 py-3 rounded-xl transition-colors text-sm shrink-0"
+                      className="bg-[#7AC0CD] hover:bg-[#93cfd9] text-white font-semibold px-6 py-3 rounded-xl transition-colors text-sm shrink-0"
                     >
                       Subscribe
                     </button>
@@ -103,7 +103,7 @@ export default function NewsletterSection() {
                         onChange={(e) => setAgreed(e.target.checked)}
                         className="sr-only"
                       />
-                      <div className={`w-4 h-4 rounded border transition-all ${agreed ? "bg-teal-500 border-teal-500" : "bg-white/5 border-white/20 group-hover:border-teal-500/50"}`}>
+                      <div className={`w-4 h-4 rounded border transition-all ${agreed ? "bg-[#7AC0CD] border-[#7AC0CD]" : "bg-white/5 border-white/20 group-hover:border-[#7AC0CD]/50"}`}>
                         {agreed && (
                           <svg className="w-2.5 h-2.5 text-white absolute top-0.5 left-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
@@ -113,7 +113,7 @@ export default function NewsletterSection() {
                     </div>
                     <span className="text-xs text-zinc-400 leading-relaxed">
                       I want to receive the SWIAT Newsletter and I accept the{" "}
-                      <a href="#" className="text-teal-400 hover:underline">data privacy guidelines</a>.
+                      <a href="#" className="text-[#7AC0CD] hover:underline">data privacy guidelines</a>.
                       You can unsubscribe from the newsletter at any time via the link in our newsletter.
                     </span>
                   </label>
@@ -127,7 +127,7 @@ export default function NewsletterSection() {
                 <SendinblueBadge />
                 <p className="text-xs text-zinc-400 leading-relaxed">
                   Wir verwenden Sendinblue als unsere Marketing-Plattform. Wenn Sie das Formular ausfüllen und absenden, bestätigen Sie, dass die von Ihnen angegebenen Informationen an Sendinblue zur Bearbeitung gemäß den{" "}
-                  <a href="https://www.sendinblue.com/legal/termsofuse/" target="_blank" rel="noopener noreferrer" className="text-teal-400 hover:underline">
+                  <a href="https://www.sendinblue.com/legal/termsofuse/" target="_blank" rel="noopener noreferrer" className="text-[#7AC0CD] hover:underline">
                     Nutzungsbedingungen
                   </a>{" "}
                   übertragen werden.
@@ -135,7 +135,7 @@ export default function NewsletterSection() {
               </div>
               <p className="text-[11px] text-zinc-600 leading-relaxed">
                 We use Sendinblue as our marketing platform. By submitting this form, you acknowledge that the information you provided will be transferred to Sendinblue for processing in accordance with their{" "}
-                <a href="https://www.sendinblue.com/legal/termsofuse/" target="_blank" rel="noopener noreferrer" className="text-teal-500 hover:underline">
+                <a href="https://www.sendinblue.com/legal/termsofuse/" target="_blank" rel="noopener noreferrer" className="text-[#7AC0CD] hover:underline">
                   terms of use
                 </a>.
               </p>

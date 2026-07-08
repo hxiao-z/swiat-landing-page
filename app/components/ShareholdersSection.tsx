@@ -39,7 +39,7 @@ const shareholders = [
     display: (
       <div className="leading-tight">
         <span className="font-bold text-xl text-white tracking-tight">Deka</span>
-        <span className="font-bold text-xl text-teal-400 tracking-tight">Bank</span>
+        <span className="font-bold text-xl text-[#7AC0CD] tracking-tight">Bank</span>
       </div>
     ),
   },
@@ -57,7 +57,7 @@ export default function ShareholdersSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="font-[family-name:var(--font-playfair)] text-4xl sm:text-5xl font-bold text-teal-400 mb-5"
+          className="font-[family-name:var(--font-playfair)] text-4xl sm:text-5xl font-bold text-[#7AC0CD] mb-5"
         >
           Our Shareholders
         </motion.h2>
@@ -80,7 +80,7 @@ export default function ShareholdersSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="flex items-center justify-center bg-white/4 border border-white/8 rounded-2xl px-6 py-8 hover:border-teal-500/30 hover:bg-white/6 transition-all"
+              className="flex items-center justify-center bg-white/4 border border-white/8 rounded-2xl px-6 py-8 hover:border-[#7AC0CD]/30 hover:bg-white/6 transition-all"
             >
               {s.display}
             </motion.div>

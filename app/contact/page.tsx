@@ -12,8 +12,10 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-[#0a1628] text-white flex flex-col">
-      <AnnouncementBar />
-      <Navbar />
+      <div className="sticky top-0 z-50">
+        <AnnouncementBar />
+        <Navbar />
+      </div>
       <main className="flex-1">
         <ContactForm />
         <NewsletterSection />

@@ -63,7 +63,7 @@ export default function StatsSection() {
       >
         <a
           href="#contact"
-          className="flex items-center gap-2 bg-[#0f2a50] border border-white/10 hover:border-teal-500/50 text-white font-semibold px-8 py-4 rounded-xl transition-colors"
+          className="flex items-center gap-2 bg-[#0f2a50] border border-white/10 hover:border-[#7AC0CD]/50 text-white font-semibold px-8 py-4 rounded-xl transition-colors"
         >
           Contact Us →
         </a>
