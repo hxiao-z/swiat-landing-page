@@ -231,13 +231,13 @@ const navItems: NavItem[] = [
                 {
                   icon: icons.baas,
                   label: "Trade Guardian Compliance Solution",
-                  href: "/solutions/blockchain-as-a-service",
+                  href: "/services/trade-guardian",
                   description: "Compliance and trade monitoring on regulated infrastructure.",
                 },
                 {
                   icon: icons.whitepaper,
                   label: "Prof. Services & Advisory",
-                  href: "/contact",
+                  href: "/services/advisory",
                   description: "Hands-on support for integration, architecture, and go-live.",
                 },
               ],
