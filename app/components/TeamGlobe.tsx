@@ -91,7 +91,7 @@ export default function TeamGlobe() {
               }}
             >
               <Geographies geography={GEO_URL}>
-                {({ geographies }) =>
+                {({ geographies }: { geographies: any[] }) =>
                   geographies.map((geo) => {
                     const numericId = geo.id as string;
                     const countryName = TEAM_COUNTRIES[numericId];
