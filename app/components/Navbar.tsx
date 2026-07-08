@@ -180,7 +180,7 @@ type NavItem = {
 };
 
 const navItems: NavItem[] = [
-  // 1 ── Solutions (use-case led, mega menu)
+  // 1 ── Solutions
   {
     label: "Solutions",
     href: "#solutions",
@@ -188,67 +188,57 @@ const navItems: NavItem[] = [
       width: "w-[540px]",
       columns: [
         {
-          heading: "",
+          heading: "Digital Asset Solutions",
           items: [
-            { icon: icons.tokenization, label: "Tokenization", href: "/solutions/tokenization" },
-            { icon: icons.market, label: "Secondary Market", href: "/solutions/secondary-market" },
-            { icon: icons.collateral, label: "Collateral Management", href: "/solutions/collateral-management" },
-            { icon: icons.registry, label: "Registry Services (eWpG)", href: "/solutions/registry-services" },
+            { icon: icons.tokenization, label: "Tokenisation & Settlement Software", href: "/solutions/tokenization" },
+            { icon: icons.registry, label: "Registry Services", href: "/solutions/registry-services" },
           ],
         },
         {
-          heading: "Customer Stories →",
+          heading: "Digital Collateral Solutions",
           items: [
-            {
-              icon: icons.customers,
-              label: "Trusted by leading banks and digital asset innovators worldwide",
-              href: "#",
-              muted: true,
-            },
+            { icon: icons.collateral, label: 'Collateral ConneX ("CCX")', href: "/solutions/collateral-management" },
           ],
         },
       ],
     },
   },
 
-  // 2 ── Platform (infrastructure products)
+  // 2 ── SWIAT Services
   {
-    label: "Platform",
-    href: "#platform",
+    label: "SWIAT Services",
+    href: "#swiat-services",
     simple: {
-      width: "w-[500px]",
+      width: "w-[340px]",
       columns: [
         {
           sections: [
             {
-              heading: "Access the Network",
+              heading: "SWIAT Services",
               items: [
                 {
                   icon: icons.access,
-                  label: "SWIAT Access",
+                  label: "Access & Connectivity",
                   href: "/solutions/swiat-access",
                   description: "Connect your institution to the SWIAT network.",
                 },
                 {
-                  icon: icons.baas,
-                  label: "Blockchain-as-a-Service",
-                  href: "/solutions/blockchain-as-a-service",
-                  description: "Run your own node or build custom applications on SWIAT.",
-                },
-              ],
-            },
-          ],
-        },
-        {
-          sections: [
-            {
-              heading: "Infrastructure",
-              items: [
-                {
                   icon: icons.network,
-                  label: "RL1",
+                  label: "RL1 Network Operator",
                   href: "https://rl1.network/",
                   description: "The regulated layer 1 blockchain network powering SWIAT.",
+                },
+                {
+                  icon: icons.baas,
+                  label: "Trade Guardian Compliance Solution",
+                  href: "/solutions/blockchain-as-a-service",
+                  description: "Compliance and trade monitoring on regulated infrastructure.",
+                },
+                {
+                  icon: icons.whitepaper,
+                  label: "Prof. Services & Advisory",
+                  href: "/contact",
+                  description: "Hands-on support for integration, architecture, and go-live.",
                 },
               ],
             },
