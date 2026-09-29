@@ -25,8 +25,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "SWIAT — The Largest Blockchain Ecosystem for Financial Services",
-  description: "Blockchain-based financial market infrastructure for digital and traditional assets, built for regulated financial entities.",
+  title: "SWIAT — The Platform for Digital Capital Market Infrastructure",
+  description: "SWIAT provides the software platform connecting regulated financial institutions to digital capital markets — from issuance to settlement, built on RL1, Europe's regulated blockchain network.",
 };
 
 export default function RootLayout({

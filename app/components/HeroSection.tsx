@@ -94,8 +94,8 @@ export default function HeroSection() {
           style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
           className="font-[family-name:var(--font-playfair)] font-bold text-white leading-tight"
         >
-          The <span style={{ color: "#7AC0CD" }}>Largest</span> Blockchain Ecosystem
-          <br />for Financial Services
+          The Platform for <span style={{ color: "#7AC0CD" }}>Digital Capital</span>
+          <br />Market Infrastructure
         </motion.h1>
 
         {/* Subline */}
@@ -105,7 +105,7 @@ export default function HeroSection() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-lg text-zinc-400 max-w-2xl leading-relaxed"
         >
-          A blockchain-based financial market infrastructure for digital and traditional assets from and for regulated financial entities.
+          SWIAT provides the software platform connecting regulated financial institutions to digital capital markets — from issuance to settlement, built on RL1, Europe's regulated blockchain network.
         </motion.p>
 
         {/* Stats */}
