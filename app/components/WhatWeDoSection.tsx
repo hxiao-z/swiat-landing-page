@@ -30,7 +30,7 @@ const pillars: Pillar[] = [
     description:
       "Collateral ConneX (CCX) enables financial institutions to mobilise collateral efficiently across borders and counterparties. By moving collateral on-chain, CCX eliminates intraday liquidity gaps and reduces the operational burden of traditional collateral management.",
     tags: ["Cross-Border Collateral", "Intraday Liquidity", "On-Chain"],
-    note: "eWpG — Crypto securities held as collateral retain their legal standing under German law.",
+    note: "",
     href: "/solutions/collateral-management",
   },
   {
@@ -40,7 +40,7 @@ const pillars: Pillar[] = [
     description:
       "SWIAT Access provides direct connectivity to the RL1 network for participants who want a streamlined on-ramp. Trade Guardian offers real-time pre-trade and on-chain compliance screening. Our professional services and advisory team supports institutions at every stage of their digital asset journey.",
     tags: ["SWIAT Access", "Trade Guardian", "Advisory"],
-    note: "eWpG — All services are designed to operate within the regulated eWpG framework.",
+    note: "",
     href: "/services/trade-guardian",
   },
 ];
@@ -116,9 +116,11 @@ export default function WhatWeDoSection() {
               </div>
 
               {/* eWpG note */}
-              <div className="border-t border-white/8 pt-4">
-                <p className="text-[11px] text-zinc-600 leading-relaxed italic">{p.note}</p>
-              </div>
+              {p.note && (
+                <div className="border-t border-white/8 pt-4">
+                  <p className="text-[11px] text-zinc-600 leading-relaxed italic">{p.note}</p>
+                </div>
+              )}
 
               {/* Arrow */}
               <div className="absolute top-7 right-7 text-zinc-700 group-hover:text-[#7AC0CD] transition-colors">
