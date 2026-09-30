@@ -105,7 +105,7 @@ export default function HeroSection() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-lg text-zinc-400 max-w-2xl leading-relaxed"
         >
-          SWIAT provides the software platform connecting regulated financial institutions to digital capital markets — from issuance to settlement, built on RL1, Europe's regulated blockchain network.
+          A regulated software platform connecting financial institutions to digital capital markets — from issuance to settlement, built on Regulated Layer One.
         </motion.p>
 
         {/* Stats */}

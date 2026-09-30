@@ -26,7 +26,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "SWIAT — The Platform for Digital Capital Market Infrastructure",
-  description: "SWIAT provides the software platform connecting regulated financial institutions to digital capital markets — from issuance to settlement, built on RL1, Europe's regulated blockchain network.",
+  description: "A regulated software platform connecting financial institutions to digital capital markets — from issuance to settlement, built on Regulated Layer One.",
 };
 
 export default function RootLayout({
