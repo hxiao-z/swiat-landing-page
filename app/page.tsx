@@ -5,6 +5,7 @@ import CredentialsBar from "./components/CredentialsBar";
 import WhatWeDoSection from "./components/WhatWeDoSection";
 import TrustSection from "./components/TrustSection";
 import AssetsSection from "./components/AssetsSection";
+import EcosystemSection from "./components/EcosystemSection";
 import NewsSection from "./components/NewsSection";
 import Footer from "./components/Footer";
 
@@ -20,6 +21,7 @@ export default function Home() {
       <WhatWeDoSection />
       <TrustSection />
       <AssetsSection />
+      <EcosystemSection />
       <NewsSection />
       <Footer />
     </div>
