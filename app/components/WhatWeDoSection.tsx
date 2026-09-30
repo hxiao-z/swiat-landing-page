@@ -6,7 +6,8 @@ type Pillar = {
   number: string;
   title: string;
   subtitle: string;
-  description: string;
+  intro: string;
+  bullets: string[];
   tags: string[];
   note: string;
   href: string;
@@ -17,8 +18,13 @@ const pillars: Pillar[] = [
     number: "01",
     title: "Digital Asset Solutions",
     subtitle: "Issue, trade and settle digital securities",
-    description:
-      "SWIAT's tokenisation and settlement software enables financial institutions to issue and manage digital securities end-to-end. Our BaFin-supervised eWpG registry provides the legal foundation for crypto securities issuance, while the SWIAT Synchronizer delivers atomic DvP settlement with T+0 finality.",
+    intro: "End-to-end software for regulated digital securities:",
+    bullets: [
+      "BaFin-supervised eWpG crypto securities registry",
+      "Tokenisation & settlement software for digital bonds",
+      "Atomic DvP settlement with T+0 finality via SWIAT Synchronizer",
+      "Full lifecycle management — from issuance to maturity",
+    ],
     tags: ["eWpG Compliant", "BaFin Licensed", "T+0 Settlement"],
     note: "eWpG — Germany's Electronic Securities Act, enabling legally equivalent digital bonds.",
     href: "/solutions/tokenization",
@@ -27,8 +33,13 @@ const pillars: Pillar[] = [
     number: "02",
     title: "Digital Collateral Solutions",
     subtitle: "Mobilise assets across borders, in real time",
-    description:
-      "Collateral ConneX (CCX) enables financial institutions to mobilise collateral efficiently across borders and counterparties. By moving collateral on-chain, CCX eliminates intraday liquidity gaps and reduces the operational burden of traditional collateral management.",
+    intro: "Collateral ConneX (CCX) for on-chain collateral mobility:",
+    bullets: [
+      "Cross-border collateral mobilisation between institutions",
+      "Eliminates intraday liquidity gaps",
+      "On-chain transparency and real-time settlement",
+      "Reduces operational burden of traditional collateral management",
+    ],
     tags: ["Cross-Border Collateral", "Intraday Liquidity", "On-Chain"],
     note: "",
     href: "/solutions/collateral-management",
@@ -37,8 +48,12 @@ const pillars: Pillar[] = [
     number: "03",
     title: "SWIAT Services",
     subtitle: "Connect, comply and get expert support",
-    description:
-      "SWIAT Access provides direct connectivity to the RL1 network for participants who want a streamlined on-ramp. Trade Guardian offers real-time pre-trade and on-chain compliance screening. Our professional services and advisory team supports institutions at every stage of their digital asset journey.",
+    intro: "Supporting institutions across the digital asset lifecycle:",
+    bullets: [
+      "SWIAT Access — direct on-ramp to the RL1 network",
+      "Trade Guardian — pre-trade and on-chain compliance screening",
+      "Professional services & advisory for digital asset strategy",
+    ],
     tags: ["SWIAT Access", "Trade Guardian", "Advisory"],
     note: "",
     href: "/services/trade-guardian",
@@ -99,9 +114,17 @@ export default function WhatWeDoSection() {
               <p className="text-[#7AC0CD] text-xs font-medium mb-4">{p.subtitle}</p>
 
               {/* Description */}
-              <p className="text-zinc-400 text-sm leading-relaxed flex-1 mb-6">
-                {p.description}
-              </p>
+              <div className="flex-1 mb-6">
+                <p className="text-zinc-500 text-xs mb-3">{p.intro}</p>
+                <ul className="flex flex-col gap-2">
+                  {p.bullets.map((b) => (
+                    <li key={b} className="flex items-start gap-2 text-zinc-300 text-sm leading-snug">
+                      <span className="mt-1.5 shrink-0 w-1 h-1 rounded-full bg-[#7AC0CD]" />
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
               {/* Tags */}
               <div className="flex flex-wrap gap-2 mb-5">
