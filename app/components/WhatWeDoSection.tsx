@@ -160,20 +160,12 @@ export default function WhatWeDoSection() {
             <p className="text-white font-semibold text-base mb-1">Ready to explore what SWIAT can do for you?</p>
             <p className="text-zinc-500 text-sm">Talk to our team or explore our solutions in detail.</p>
           </div>
-          <div className="flex items-center gap-3 shrink-0">
-            <a
-              href="/solutions/tokenization"
-              className="text-sm font-semibold text-zinc-300 hover:text-white border border-white/15 hover:border-white/30 px-5 py-2.5 rounded-lg transition-all"
-            >
-              Explore Solutions
-            </a>
-            <a
-              href="/contact"
-              className="text-sm font-semibold text-[#050e1d] bg-[#7AC0CD] hover:bg-[#8ed0dc] px-5 py-2.5 rounded-lg transition-colors"
-            >
-              Contact Us
-            </a>
-          </div>
+          <a
+            href="/solutions/tokenization"
+            className="shrink-0 text-sm font-semibold text-[#050e1d] bg-[#7AC0CD] hover:bg-[#8ed0dc] px-6 py-2.5 rounded-lg transition-colors"
+          >
+            Explore Solutions
+          </a>
         </motion.div>
       </div>
     </section>

@@ -4,7 +4,6 @@ import HeroSection from "./components/HeroSection";
 import CredentialsBar from "./components/CredentialsBar";
 import WhatWeDoSection from "./components/WhatWeDoSection";
 import TrustSection from "./components/TrustSection";
-import HowItWorksSection from "./components/HowItWorksSection";
 import AssetsSection from "./components/AssetsSection";
 import NewsSection from "./components/NewsSection";
 import Footer from "./components/Footer";
@@ -20,7 +19,6 @@ export default function Home() {
       <CredentialsBar />
       <WhatWeDoSection />
       <TrustSection />
-      <HowItWorksSection />
       <AssetsSection />
       <NewsSection />
       <Footer />
