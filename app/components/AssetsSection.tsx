@@ -34,10 +34,10 @@ function elbowPath(n: { cy: number; ncx: number }): string {
 
 // ── bullet content ────────────────────────────────────────────────────────────
 const bullets = [
-  "Issue, trade and settle all digital asset types on the same platform",
-  "Reduce costs up to 80%",
-  "Settle securities globally in real-time",
-  "Manage intraday liquidity, and more!",
+  "Issue, trade and settle digital securities on one connected platform",
+  "Reduce operational costs by up to 85% versus legacy infrastructure",
+  "T+0 atomic settlement — eliminating counterparty and settlement risk",
+  "BaFin-licensed, eWpG-compliant, and auditable on-chain from day one",
 ];
 
 // ── component ─────────────────────────────────────────────────────────────────
@@ -56,18 +56,18 @@ export default function AssetsSection() {
           transition={{ duration: 0.7 }}
         >
           <p className="text-xs font-semibold text-[#7AC0CD] uppercase tracking-widest mb-4">
-            Platform Benefits
+            Why SWIAT
           </p>
           <h2
             className="font-[family-name:var(--font-playfair)] font-bold text-white leading-tight mb-6"
             style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)" }}
           >
-            Faster, cheaper,<br />
-            more transparent<br />
-            and more secure
+            Every digital asset type.<br />
+            One regulated<br />
+            infrastructure.
           </h2>
           <p className="text-sm font-medium text-[#7AC0CD] mb-5">
-            For assets on the SWIAT transaction platform:
+            SWIAT connects tokenised assets, crypto securities, digital bonds, and traditional instruments on the same platform:
           </p>
           <ul className="flex flex-col gap-3 mb-10">
             {bullets.map((b, i) => (
@@ -84,13 +84,13 @@ export default function AssetsSection() {
             ))}
           </ul>
           <motion.a
-            href="#"
+            href="/solutions/tokenization"
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ duration: 0.5, delay: 0.7 }}
             className="inline-block border border-white/30 hover:border-[#7AC0CD] text-white font-semibold px-8 py-3 rounded-lg transition-colors text-sm"
           >
-            Details
+            Explore our solutions
           </motion.a>
         </motion.div>
 

@@ -7,9 +7,9 @@ import dynamic from "next/dynamic";
 const NetworkVisual = dynamic(() => import("./NetworkVisual"), { ssr: false });
 
 const stats = [
-  { value: 700, prefix: "", suffix: "+", label: "Million EUR in Settlement Volume" },
-  { value: 50,  prefix: ">", suffix: "",  label: "Financial Entities Onboarded" },
-  { value: 20,  prefix: "", suffix: "+",  label: "Digital Landmark Transactions" },
+  { value: 1, prefix: "€", suffix: "B+", label: "Settlement & Issuance Volume" },
+  { value: 50,  prefix: "", suffix: "+",  label: "On-Chain Participants" },
+  { value: 40,  prefix: "", suffix: "+",  label: "Live Transactions Completed" },
 ];
 
 const shareholders = [
