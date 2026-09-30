@@ -2,33 +2,46 @@
 
 import { motion } from "framer-motion";
 
-const pillars = [
+type Pillar = {
+  number: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  tags: string[];
+  note: string;
+  href: string;
+};
+
+const pillars: Pillar[] = [
   {
     number: "01",
-    title: "Digital Securities Registry",
-    subtitle: "Issue on-chain, under German law",
+    title: "Digital Asset Solutions",
+    subtitle: "Issue, trade and settle digital securities",
     description:
-      "SWIAT operates a BaFin-supervised digital securities registry under the eWpG framework. Financial institutions can issue digital bonds and other crypto securities — legally equivalent to traditional instruments, with full lifecycle management on-chain.",
-    tags: ["eWpG Compliant", "BaFin Licensed", "Digital Bond Issuance"],
-    href: "/solutions/registry-services",
-  },
-  {
-    number: "02",
-    title: "T+0 Settlement",
-    subtitle: "Atomic DvP, zero counterparty risk",
-    description:
-      "The SWIAT Synchronizer enables atomic Delivery versus Payment (DvP) across existing payment rails and digital assets — eliminating settlement risk, reducing operational overhead, and enabling same-day finality for the first time in European capital markets.",
-    tags: ["Atomic DvP", "T+0 Finality", "Cross-Platform"],
+      "SWIAT's tokenisation and settlement software enables financial institutions to issue and manage digital securities end-to-end. Our BaFin-supervised eWpG registry provides the legal foundation for crypto securities issuance, while the SWIAT Synchronizer delivers atomic DvP settlement with T+0 finality.",
+    tags: ["eWpG Compliant", "BaFin Licensed", "T+0 Settlement"],
+    note: "eWpG — Germany's Electronic Securities Act, enabling legally equivalent digital bonds.",
     href: "/solutions/tokenization",
   },
   {
-    number: "03",
-    title: "Collateral & Access",
-    subtitle: "Connect to the network, mobilise assets",
+    number: "02",
+    title: "Digital Collateral Solutions",
+    subtitle: "Mobilise assets across borders, in real time",
     description:
-      "SWIAT's platform connects custodians, trading venues, and asset managers to the digital asset ecosystem. Collateral ConneX (CCX) enables efficient cross-border collateral mobilisation, while SWIAT Access provides direct on-ramp to the RL1 network.",
-    tags: ["Collateral Management", "Cross-Border", "Network Access"],
+      "Collateral ConneX (CCX) enables financial institutions to mobilise collateral efficiently across borders and counterparties. By moving collateral on-chain, CCX eliminates intraday liquidity gaps and reduces the operational burden of traditional collateral management.",
+    tags: ["Cross-Border Collateral", "Intraday Liquidity", "On-Chain"],
+    note: "eWpG — Crypto securities held as collateral retain their legal standing under German law.",
     href: "/solutions/collateral-management",
+  },
+  {
+    number: "03",
+    title: "SWIAT Services",
+    subtitle: "Connect, comply and get expert support",
+    description:
+      "SWIAT Access provides direct connectivity to the RL1 network for participants who want a streamlined on-ramp. Trade Guardian offers real-time pre-trade and on-chain compliance screening. Our professional services and advisory team supports institutions at every stage of their digital asset journey.",
+    tags: ["SWIAT Access", "Trade Guardian", "Advisory"],
+    note: "eWpG — All services are designed to operate within the regulated eWpG framework.",
+    href: "/services/trade-guardian",
   },
 ];
 
@@ -91,7 +104,7 @@ export default function WhatWeDoSection() {
               </p>
 
               {/* Tags */}
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 mb-5">
                 {p.tags.map((tag) => (
                   <span
                     key={tag}
@@ -100,6 +113,11 @@ export default function WhatWeDoSection() {
                     {tag}
                   </span>
                 ))}
+              </div>
+
+              {/* eWpG note */}
+              <div className="border-t border-white/8 pt-4">
+                <p className="text-[11px] text-zinc-600 leading-relaxed italic">{p.note}</p>
               </div>
 
               {/* Arrow */}
