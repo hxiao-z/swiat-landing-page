@@ -75,19 +75,13 @@ export default function WhatWeDoSection() {
           <p className="text-[#7AC0CD] text-xs font-semibold uppercase tracking-widest mb-4">
             What SWIAT Does
           </p>
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-            <h2
-              className="font-[family-name:var(--font-playfair)] font-bold text-white leading-tight"
-              style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)" }}
-            >
-              One platform. <span style={{ color: "#7AC0CD" }}>Every stage</span>
-              <br className="hidden sm:block" /> of the digital capital market.
-            </h2>
-            <p className="text-zinc-400 text-sm max-w-sm leading-relaxed md:text-right">
-              From legal issuance to on-chain settlement — SWIAT connects the regulated
-              financial system to digital asset infrastructure.
-            </p>
-          </div>
+          <h2
+            className="font-[family-name:var(--font-playfair)] font-bold text-white leading-tight"
+            style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)" }}
+          >
+            One platform. <span style={{ color: "#7AC0CD" }}>Every stage</span>
+            <br className="hidden sm:block" /> of the digital capital market.
+          </h2>
         </motion.div>
 
         {/* Pillars */}
