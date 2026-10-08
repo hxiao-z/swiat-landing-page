@@ -5,24 +5,24 @@ import Link from "next/link";
 
 const editions = [
   {
+    year: "2025",
+    title: "SWIAT Conference 2025",
+    location: "Frankfurt am Main",
+    desc: "The 2025 conference marked a year of expanding mandates — Project Sovereign demonstrated a compelling on-chain CSD use case with the Bank of Greece, secondary market activity scaled across participants, and BaFin formally announced the eWpG registry licence (with live transactions following in 2026).",
+    highlights: ["Project Sovereign: on-chain CSD use case with Bank of Greece", "Secondary market activity scales across the network", "BaFin eWpG registry licence announced"],
+    tag: "Most recent",
+  },
+  {
     year: "2024",
     title: "SWIAT Conference 2024",
     location: "Frankfurt am Main",
-    desc: "Our third annual gathering brought together over 80 participants from leading European financial institutions, regulators, and digital asset innovators. A day of closed-door sessions on the future of regulated blockchain infrastructure.",
-    highlights: ["Keynote on eWpG implementation at scale", "Regulator roundtable with BaFin representatives", "Live demo of atomic DvP settlement"],
-    tag: "Most recent",
+    desc: "A landmark year for the network — 8 live transactions within the ECB DLT trials, including the Siemens €300m digital bond issuance, the largest digital securities transaction in Europe. SWIAT demonstrated wholesale settlement interoperability with central bank systems.",
+    highlights: ["8 transactions in the ECB DLT trials", "Siemens €300m issuance — largest digital bond in Europe", "Wholesale settlement interoperability with central bank systems"],
+    tag: null,
   },
   {
     year: "2023",
     title: "SWIAT Conference 2023",
-    location: "Frankfurt am Main",
-    desc: "Building on the momentum of our first year, the 2023 edition deepened conversations on tokenization standards and cross-border settlement — with a growing room of founding members and new network participants.",
-    highlights: ["Panel: Tokenization standards across jurisdictions", "First live issuance of a digital bond on SWIAT", "Working group formation on collateral mobility"],
-    tag: null,
-  },
-  {
-    year: "2022",
-    title: "SWIAT Conference 2022",
     location: "Frankfurt am Main",
     desc: "The inaugural SWIAT Conference marked the beginning of an annual tradition — a small, deliberate gathering of the founding members and early institutional partners who shaped the SWIAT network from the ground up.",
     highlights: ["Founding member network launch", "Introduction of the SWIAT blockchain architecture", "First cross-institution settlement demo"],
@@ -126,12 +126,13 @@ export default function ConferencePage() {
                 transition={{ duration: 0.5 }}
                 className={`grid lg:grid-cols-2 gap-10 items-start ${i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""}`}
               >
-                {/* Photo gallery — 2 placeholders per edition */}
+                {/* Photo gallery */}
                 <div className="grid grid-cols-2 gap-3">
                   <PhotoPlaceholder label={`${ed.year} — photo 1`} />
-                  <PhotoPlaceholder label={`${ed.year} — photo 2`} aspect="square" />
-                  <PhotoPlaceholder label={`${ed.year} — photo 3`} aspect="square" />
-                  <PhotoPlaceholder label={`${ed.year} — photo 4`} />
+                  <PhotoPlaceholder label={`${ed.year} — photo 2`} />
+                  <div className="col-span-2">
+                    <PhotoPlaceholder label={`${ed.year} — photo 3`} />
+                  </div>
                 </div>
 
                 {/* Text */}

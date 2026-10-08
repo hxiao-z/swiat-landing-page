@@ -29,7 +29,7 @@ const pillars = [
     ),
   },
   {
-    title: "Built for banks",
+    title: "Built for financial institutions",
     desc: "Every design decision is made with the compliance, security, and operational requirements of regulated financial institutions in mind — from the architecture up.",
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -56,11 +56,11 @@ const shareholders = [
 ];
 
 const timeline = [
-  { year: "2019", event: "SWIAT founded in Frankfurt by a group of banking and technology veterans." },
-  { year: "2021", event: "First live transaction on the SWIAT network — a milestone for blockchain-based settlement in Europe." },
-  { year: "2022", event: "Inaugural SWIAT Conference. First annual gathering of founding members and network participants." },
-  { year: "2023", event: "ECB DLT trials completed. SWIAT demonstrates wholesale settlement interoperability with central bank systems." },
-  { year: "2024", event: "BaFin grants SWIAT the licence to operate a crypto-securities registry under eWpG. Network surpasses 50 financial entities." },
+  { year: "2022", event: "SWIAT founded in Frankfurt by a group of banking and technology veterans." },
+  { year: "2023", event: "First live transaction on the SWIAT network — a milestone for blockchain-based settlement in Europe." },
+  { year: "2023", event: "Inaugural SWIAT Conference. First annual gathering of founding members and network participants." },
+  { year: "2024", event: "ECB DLT trials completed. SWIAT demonstrates wholesale settlement interoperability with central bank systems." },
+  { year: "2025", event: "BaFin grants SWIAT the licence to operate a crypto-securities registry under eWpG. Network surpasses 50 financial entities." },
 ];
 
 export default function AboutPage() {
@@ -113,10 +113,10 @@ export default function AboutPage() {
       <section className="bg-[#003946]/20 border-b border-[#7AC0CD]/10 py-8 px-6">
         <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
           {[
-            { value: "700M+", label: "EUR settlement volume" },
+            { value: "€1B+", label: "EUR settlement volume" },
             { value: "50+", label: "Financial entities" },
             { value: "34", label: "People" },
-            { value: "2019", label: "Founded" },
+            { value: "2022", label: "Founded" },
           ].map(s => (
             <div key={s.label}>
               <p className="text-[#7AC0CD] font-bold text-2xl">{s.value}</p>
@@ -139,7 +139,7 @@ export default function AboutPage() {
                 &ldquo;To create a financial infrastructure of the future that enables secure and frictionless real-time trading and settlement for all types of regulated assets on a global scale.&rdquo;
               </blockquote>
               <p className="text-zinc-400 leading-relaxed text-sm">
-                That mission has driven every product decision, every regulatory conversation, and every line of code since we were founded in 2019. It is not a tagline — it is the filter through which we make every decision.
+                That mission has driven every product decision, every regulatory conversation, and every line of code since we were founded in 2022. It is not a tagline — it is the filter through which we make every decision.
               </p>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
@@ -202,7 +202,7 @@ export default function AboutPage() {
             <div className="flex flex-col gap-8">
               {timeline.map((t, i) => (
                 <motion.div
-                  key={t.year}
+                  key={i}
                   initial={{ opacity: 0, x: -16 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
@@ -264,7 +264,6 @@ export default function AboutPage() {
                     />
                   </div>
                 </div>
-                <p className="text-zinc-400 text-xs leading-relaxed">{s.desc}</p>
               </motion.div>
             ))}
           </div>

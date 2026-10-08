@@ -40,34 +40,73 @@ function PhotoFrame({ label, src }: { label: string; src?: string }) {
 
 const benefits = [
   {
-    title: "Real-time collateral allocation",
-    desc: "Allocate collateral to any counterparty in the SWIAT network instantly — no overnight batch processes, no manual reconciliation.",
+    title: "Seamless collateral mobility",
+    desc: "On-chain securities transferred between participants in near real time — cross-border, with no cut-off times or operating-hours constraints. Built for T+1 and beyond.",
     icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>,
   },
   {
-    title: "Intraday liquidity optimisation",
-    desc: "Free up capital locked in the settlement cycle by moving collateral in real time — reducing the cost of intraday liquidity across your book.",
+    title: "Legal certainty. Minimal change.",
+    desc: "Legal title stays within traditional custody infrastructure. Existing Global Custody Agreements can largely be reused — reducing legal complexity and onboarding effort for existing clients.",
+    icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>,
+  },
+  {
+    title: "One standard. Seamless connectivity.",
+    desc: "A single standardised instruction model eliminates fragmented messaging and processing breaks — seamlessly interoperable with custodians, tri-party agents, and agent lenders.",
+    icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>,
+  },
+  {
+    title: "Full transparency. Always reconciled.",
+    desc: "Single unified view of all collateral positions, automatically reconciled — significantly reducing operational overhead and enabling better decision-making and asset allocation.",
+    icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0zm-3-9v2m0 14v2m9-9h-2M5 12H3" /></svg>,
+  },
+  {
+    title: "Lower PFE / CCR / RWA",
+    desc: "Instant settlement minimises potential future exposure and counterparty credit risk — reducing capital charges and unlocking trapped liquidity across your book.",
     icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
   },
   {
-    title: "Programmable collateral rules",
-    desc: "Define eligibility criteria, haircut schedules, and substitution logic as smart contract rules that execute automatically — no manual override required.",
-    icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>,
+    title: "Internal efficiency without market adoption",
+    desc: "Intra-group collateral optimisation delivers real value immediately — real-time transfers across entities and jurisdictions, even before external counterparties join.",
+    icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>,
+  },
+];
+
+const useCases = [
+  {
+    num: "01",
+    title: "Repo / Intraday Repo",
+    driver: "Tier-1 banks estimate >$100m annual savings from intraday repo optimisation",
+    points: ["Atomic real-time DvP and instant confirmations", "Reduce settlement risk, funding buffers, and intraday credit fails", "Ready for CB money today + ECB PONTES (end 2026)"],
   },
   {
-    title: "Cross-border collateral mobility",
-    desc: "Move tokenized assets as collateral across jurisdictions without the operational friction of traditional cross-border transfer mechanisms.",
-    icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg>,
+    num: "02",
+    title: "Securities Lending",
+    driver: "T+1 creates higher operational pressure across the lending chain",
+    points: ["DvP substitutions with no 'one-leg-fails'", "Instant exposure visibility and faster recalls & reallocations", "Materially lower CSDR penalties with low-friction adoption"],
   },
   {
-    title: "Automated margining",
-    desc: "Margin calls triggered automatically when thresholds are breached — collateral substitutions executed on-chain without manual intervention.",
-    icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>,
+    num: "03",
+    title: "Real-Time Collateral Mobility",
+    driver: "24/7 mobility across all products and time zones",
+    points: ["Unified collateral pool: Repo, Sec Lending, OTC IM/VM, Treasury & intra-group", "Real-time visibility and faster global response", "Lower PFE/CCR/RWA, fully reconciled to custodian books"],
   },
   {
-    title: "Transparent collateral pool",
-    desc: "All participants see a consistent, real-time view of collateral positions — eliminating reconciliation disputes and operational overhead.",
-    icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0zm-3-9v2m0 14v2m9-9h-2M5 12H3m15.364-6.364l-1.414 1.414M7.05 16.95l-1.414 1.414M18.364 18.364l-1.414-1.414M7.05 7.05L5.636 5.636" /></svg>,
+    num: "04",
+    title: "Intra-Group Optimisation",
+    driver: "Delivers internal efficiency even without external market adoption",
+    points: ["Real-time intra-group transfers across entities and jurisdictions", "Immediate liquidity and buffer reduction", "Enhanced efficiency without requiring counterparty onboarding"],
+  },
+  {
+    num: "05",
+    title: "Tri-party Agent Access",
+    driver: "Real-time re-use of assets with third-party TPAs",
+    points: ["Real-time tri-party re-use with dynamic cross-location optimisation", "Fast go-live with one TPA, delivering immediate operational uplift", "Optimise assets across TPAs and enhance yield"],
+  },
+  {
+    num: "06",
+    title: "Agency Lending",
+    driver: "Real-time collateralisation of lending and guarantees",
+    points: ["Access to more participants and lending flows with broader market connectivity", "Higher collateral utilisation with fewer settlement breaks", "Instant settlement via on-chain CB money, with Target2 (end 2026)"],
   },
 ];
 
@@ -90,11 +129,8 @@ export default function CollateralManagementPage() {
             <h1 className="font-[family-name:var(--font-playfair)] font-bold text-white leading-tight mb-5" style={{ fontSize: "clamp(2.2rem, 4vw, 3.5rem)" }}>
               Collateral Management
             </h1>
-            <p className="text-white/80 text-lg leading-relaxed mb-4 font-medium">
-              Real-time collateral allocation across the SWIAT network — programmable rules, intraday liquidity, and zero manual reconciliation.
-            </p>
-            <p className="text-zinc-400 leading-relaxed mb-8">
-              Legacy collateral management is slow, expensive and fragmented across custodians and systems. SWIAT puts collateral on-chain, making it instantly moveable, transparently tracked, and fully automated — releasing trapped liquidity and reducing operational overhead.
+            <p className="text-white/80 text-lg leading-relaxed mb-8 font-medium">
+              Collateral ConneX (CCX) — SWIAT&apos;s real-time collateral mobility engine. Programmable rules, intraday liquidity, and zero manual reconciliation across a globally connected network.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/contact" className="inline-flex items-center gap-2 bg-[#7AC0CD] hover:bg-[#93cfd9] text-[#050e1d] font-bold text-sm px-6 py-3.5 rounded-xl transition-colors">
@@ -112,17 +148,18 @@ export default function CollateralManagementPage() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="bg-[#003946]/30 border-y border-[#7AC0CD]/15 py-8 px-6">
-        <div className="max-w-4xl mx-auto grid grid-cols-3 gap-6 text-center">
+      {/* Market Stats */}
+      <section className="bg-[#003946]/30 border-y border-[#7AC0CD]/15 py-10 px-6">
+        <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6">
           {[
-            { value: "Real-time", label: "Collateral allocation" },
-            { value: "Intraday", label: "Liquidity optimisation" },
-            { value: "Automated", label: "Margin & substitution" },
+            { value: "52%", label: "of firms plan to go live with tokenised collateral by end of 2026", sub: "Nasdaq 2026" },
+            { value: "80%", label: "of North American firms expect tokenized collateral to have major impact", sub: "ValueExchange 2026" },
+            { value: "CDM-Aligned", label: "Interoperable and regulation-ready from day one", sub: null },
           ].map(s => (
-            <div key={s.label}>
-              <p className="text-[#7AC0CD] font-bold text-xl">{s.value}</p>
-              <p className="text-white font-semibold text-xs mt-1">{s.label}</p>
+            <div key={s.value} className="flex flex-col gap-1">
+              <p className="text-[#7AC0CD] font-bold text-xl leading-tight">{s.value}</p>
+              <p className="text-white text-xs leading-relaxed mt-1">{s.label}</p>
+              {s.sub && <p className="text-zinc-600 text-[10px] mt-1">{s.sub}</p>}
             </div>
           ))}
         </div>
@@ -130,11 +167,8 @@ export default function CollateralManagementPage() {
 
       {/* Overview */}
       <section className="bg-[#0a1628] py-24 px-6">
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
           <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <PhotoFrame label="Upload image — collateral / liquidity visual" />
-          </motion.div>
-          <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
             <p className="text-xs font-bold text-[#7AC0CD] uppercase tracking-widest mb-3">Overview</p>
             <h2 className="font-[family-name:var(--font-playfair)] font-bold text-white mb-5" style={{ fontSize: "clamp(1.6rem, 3vw, 2.25rem)" }}>
               Collateral that moves as fast as markets
@@ -142,20 +176,19 @@ export default function CollateralManagementPage() {
             <p className="text-zinc-300 leading-relaxed mb-4">
               Traditional collateral management relies on overnight settlement cycles, manual reconciliation, and fragmented custody arrangements. The result: trapped liquidity, operational risk, and slow responses to margin calls.
             </p>
-            <p className="text-zinc-400 leading-relaxed mb-6">
-              SWIAT replaces this with a single on-chain collateral layer — where tokenized assets can be posted, reallocated, or substituted in real time across all connected network participants.
-            </p>
-            <ul className="flex flex-col gap-3">
-              {["Real-time allocation across the SWIAT network", "Programmable eligibility, haircuts and substitution rules", "Intraday liquidity freed from overnight settlement windows", "Automated margin calls and collateral returns"].map(item => (
-                <li key={item} className="flex items-start gap-3 text-sm text-zinc-300">
-                  <svg className="w-4 h-4 text-[#7AC0CD] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <Link href="/contact" className="inline-flex items-center gap-2 mt-8 bg-[#7AC0CD] hover:bg-[#93cfd9] text-[#050e1d] font-bold text-sm px-6 py-3 rounded-xl transition-colors">
-              Learn more →
+
+            <Link href="/contact" className="inline-flex items-center gap-2 bg-[#7AC0CD] hover:bg-[#93cfd9] text-[#050e1d] font-bold text-sm px-6 py-3 rounded-xl transition-colors">
+              Talk to an expert →
             </Link>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
+            <div className="grid grid-cols-2 gap-4">
+              {["Real-time allocation across the SWIAT network", "Programmable eligibility, haircuts and substitution rules", "Intraday liquidity freed from overnight settlement windows", "Automated margin calls and collateral returns"].map(item => (
+                <div key={item} className="bg-white/3 border border-white/8 rounded-2xl p-5 hover:border-[#7AC0CD]/25 transition-all">
+                  <p className="text-zinc-300 text-sm leading-relaxed">{item}</p>
+                </div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
@@ -166,7 +199,7 @@ export default function CollateralManagementPage() {
           <div className="text-center mb-14">
             <p className="text-xs font-bold text-[#7AC0CD] uppercase tracking-widest mb-3">Benefits</p>
             <h2 className="font-[family-name:var(--font-playfair)] font-bold text-white" style={{ fontSize: "clamp(1.6rem, 3vw, 2.25rem)" }}>
-              Why manage collateral on SWIAT?
+              Why manage collateral on SWIAT CCX?
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -179,28 +212,104 @@ export default function CollateralManagementPage() {
               </motion.div>
             ))}
           </div>
+          <div className="text-center mt-12">
+            <Link href="/contact" className="inline-flex items-center gap-2 border border-[#7AC0CD]/40 text-[#7AC0CD] hover:bg-[#7AC0CD]/10 font-semibold text-sm px-6 py-3 rounded-xl transition-colors">
+              See how CCX fits your institution →
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* How it works */}
-      <section className="bg-[#050e1d] border-t border-white/5 py-24 px-6">
-        <div className="max-w-4xl mx-auto">
+      {/* CCX Use Cases */}
+      <section className="bg-[#07111f] border-t border-white/5 py-24 px-6">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
-            <p className="text-xs font-bold text-[#7AC0CD] uppercase tracking-widest mb-3">How it works</p>
+            <p className="text-xs font-bold text-[#7AC0CD] uppercase tracking-widest mb-3">CCX Use Cases</p>
             <h2 className="font-[family-name:var(--font-playfair)] font-bold text-white" style={{ fontSize: "clamp(1.6rem, 3vw, 2.25rem)" }}>
-              From inventory to automated lifecycle
+              Mobilise collateral globally — across every product and time zone
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 gap-5">
-            {steps.map((s, i) => (
-              <motion.div key={s.step} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="bg-white/3 border border-white/8 rounded-2xl p-6 hover:border-[#7AC0CD]/25 transition-all">
-                <span className="text-[#7AC0CD]/40 font-bold text-3xl leading-none block mb-3">{s.step}</span>
-                <h3 className="text-white font-bold text-base mb-2">{s.title}</h3>
-                <p className="text-zinc-400 text-sm leading-relaxed">{s.desc}</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {useCases.map((uc, i) => (
+              <motion.div key={uc.num} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.07 }}
+                className="bg-white/3 border border-white/8 rounded-2xl p-6 hover:border-[#7AC0CD]/30 transition-all flex flex-col gap-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-[#7AC0CD]/30 font-bold text-2xl leading-none shrink-0">{uc.num}</span>
+                  <h3 className="text-white font-bold text-sm leading-snug">{uc.title}</h3>
+                </div>
+                <p className="text-[#7AC0CD] text-xs font-medium leading-snug">{uc.driver}</p>
               </motion.div>
             ))}
           </div>
+          <div className="text-center mt-12">
+            <Link href="/contact" className="inline-flex items-center gap-2 bg-[#7AC0CD] hover:bg-[#93cfd9] text-[#050e1d] font-bold text-sm px-6 py-3.5 rounded-xl transition-colors">
+              Discuss your use case
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CCX Architecture */}
+      <section className="bg-[#07111f] border-t border-white/5 py-20 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-14">
+            <p className="text-xs font-bold text-[#7AC0CD] uppercase tracking-widest mb-3">CCX Architecture</p>
+            <h2
+              className="font-[family-name:var(--font-playfair)] font-bold text-white"
+              style={{ fontSize: "clamp(1.4rem, 2.5vw, 2rem)" }}
+            >
+              Collateral ConneX — how it moves
+            </h2>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            {/* 3-step flow */}
+            <div className="grid grid-cols-3 gap-0 relative mb-6">
+              {/* connector line behind steps */}
+              <div className="absolute top-10 left-[calc(16.67%+1rem)] right-[calc(16.67%+1rem)] h-px bg-[#7AC0CD]/25 z-0" />
+
+              {[
+                {
+                  num: "01",
+                  label: "Onramp",
+                  sub: "Bring assets onto CCX",
+                  detail: "Securities held in traditional custody are tokenised and made available on the SWIAT network — without leaving their legal custody framework.",
+                  icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />,
+                },
+                {
+                  num: "02",
+                  label: "Transfer",
+                  sub: "Transfer collateral",
+                  detail: "Assets move between CCX participants in real time — FoP, DvD, or DvP — with automated eligibility checks and haircut application.",
+                  icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />,
+                },
+                {
+                  num: "03",
+                  label: "Offramp",
+                  sub: "Return assets to custody",
+                  detail: "When collateral is no longer required, assets are unlocked and returned seamlessly to the originating custodian — fully reconciled, no manual steps.",
+                  icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M20 16v1a3 3 0 01-3 3H7a3 3 0 01-3-3v-1m4-4l4 4m0 0l4-4m-4 4V4" />,
+                },
+              ].map((step, i) => (
+                <div key={step.num} className="flex flex-col items-center text-center px-4 relative z-10">
+                  <div className="w-20 h-20 rounded-2xl bg-[#003946] border-2 border-[#7AC0CD]/50 flex items-center justify-center text-[#7AC0CD] mb-4 shrink-0">
+                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">{step.icon}</svg>
+                  </div>
+                  <span className="text-[#7AC0CD]/40 font-bold text-xs tracking-widest uppercase mb-1">{step.num}</span>
+                  <h3 className="text-white font-bold text-base mb-1">{step.label}</h3>
+                  <p className="text-[#7AC0CD] text-xs font-medium mb-3">{step.sub}</p>
+                  <p className="text-zinc-500 text-xs leading-relaxed">{step.detail}</p>
+                </div>
+              ))}
+            </div>
+
+          </motion.div>
         </div>
       </section>
 
@@ -215,13 +324,10 @@ export default function CollateralManagementPage() {
             <p className="text-zinc-300 font-medium text-base mb-8 max-w-xl mx-auto">
               Get in touch to explore how SWIAT can transform your collateral operations — freeing capital, eliminating manual processes, and connecting you to the network.
             </p>
-            <div className="flex flex-wrap gap-3 justify-center">
+            <div className="flex justify-center">
               <Link href="/contact" className="inline-flex items-center gap-2 bg-[#7AC0CD] hover:bg-[#93cfd9] text-[#050e1d] font-bold text-sm px-7 py-3.5 rounded-xl transition-colors">
-                Contact us
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-              </Link>
-              <Link href="/contact" className="inline-flex items-center gap-2 border border-[#7AC0CD]/40 text-[#7AC0CD] hover:bg-[#7AC0CD]/10 font-semibold text-sm px-7 py-3.5 rounded-xl transition-colors">
                 Talk to an expert
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </Link>
             </div>
           </motion.div>

@@ -87,9 +87,6 @@ export default function TradeGuardianPage() {
             <p className="text-white/80 text-lg leading-relaxed mb-4 font-medium">
               Automated, real-time compliance screening and monitoring — built into the SWIAT network at the infrastructure layer.
             </p>
-            <p className="text-zinc-400 leading-relaxed mb-8">
-              Trade Guardian ensures that every transaction on the SWIAT network is validated against configurable compliance rules before settlement — giving regulated institutions the confidence to trade digital assets at speed, without compromising on control.
-            </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/contact" className="inline-flex items-center gap-2 bg-[#7AC0CD] hover:bg-[#93cfd9] text-[#050e1d] font-bold text-sm px-6 py-3.5 rounded-xl transition-colors">
                 Get started
@@ -124,11 +121,8 @@ export default function TradeGuardianPage() {
 
       {/* Overview */}
       <section className="bg-[#0a1628] py-24 px-6">
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
           <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <PhotoFrame label="Upload image — compliance dashboard visual" />
-          </motion.div>
-          <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
             <p className="text-xs font-bold text-[#7AC0CD] uppercase tracking-widest mb-3">Overview</p>
             <h2 className="font-[family-name:var(--font-playfair)] font-bold text-white mb-5" style={{ fontSize: "clamp(1.6rem, 3vw, 2.25rem)" }}>
               Compliance at the speed of the blockchain
@@ -136,22 +130,27 @@ export default function TradeGuardianPage() {
             <p className="text-zinc-300 leading-relaxed mb-4">
               Traditional compliance workflows are manual, slow, and bolt-on — designed for a world where trades settle in days. In a T+0 blockchain environment, compliance must be instantaneous. Trade Guardian brings that capability natively to the SWIAT network.
             </p>
-            <p className="text-zinc-400 leading-relaxed mb-6">
-              Whether you need pre-trade screening, post-trade surveillance, or ongoing regulatory reporting, Trade Guardian gives your compliance team the tools to operate at the pace of digital capital markets — without sacrificing accuracy or control.
-            </p>
-            <ul className="flex flex-col gap-3">
+
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 bg-[#7AC0CD] hover:bg-[#93cfd9] text-[#050e1d] font-bold text-sm px-6 py-3 rounded-xl transition-colors"
+            >
+              Contact us to learn more
+            </Link>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
+            <div className="grid grid-cols-2 gap-4">
               {[
                 "Pre-trade compliance checks on every transaction",
                 "Configurable rule engine for MiFID II, eWpG, MiCA",
                 "Automated KYC/AML eligibility at the network layer",
                 "On-chain audit trail for regulators and internal audit",
               ].map(item => (
-                <li key={item} className="flex items-start gap-3 text-sm text-zinc-300">
-                  <svg className="w-4 h-4 text-[#7AC0CD] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
-                  {item}
-                </li>
+                <div key={item} className="bg-white/3 border border-white/8 rounded-2xl p-5 hover:border-[#7AC0CD]/25 transition-all">
+                  <p className="text-zinc-300 text-sm leading-relaxed">{item}</p>
+                </div>
               ))}
-            </ul>
+            </div>
           </motion.div>
         </div>
       </section>

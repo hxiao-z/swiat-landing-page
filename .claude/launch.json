@@ -5,7 +5,15 @@
       "name": "nextjs-dev",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
-      "port": 3000
+      "port": 3000,
+      "autoPort": true
+    },
+    {
+      "name": "conference-crm",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "/Users/hanxiaozheng/Desktop/SWIAT Conference/conference-crm"],
+      "port": 5173,
+      "autoPort": true
     }
   ]
 }

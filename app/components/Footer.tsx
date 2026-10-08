@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const footerLinks = {
-  Solutions: ["Digital Bonds", "Asset Tokenization", "Collateral Management", "Stablecoins", "CBDC"],
+  Solutions: ["Digital Bonds", "Asset Tokenization", "Collateral Management", "CBDC"],
   Company: ["About", "News", "Careers", "Contact"],
   Legal: ["Imprint", "Privacy Policy", "Terms of Use"],
 };

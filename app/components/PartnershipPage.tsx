@@ -42,19 +42,28 @@ const partnerTypes = [
   },
 ];
 
-const principles = [
-  {
-    title: "Regulated by default",
-    desc: "Every partner operates within a permissioned, compliant environment. We do not compromise on regulatory standing — it is the foundation everything else is built on.",
-  },
-  {
-    title: "Open network, not open access",
-    desc: "The SWIAT network is designed to grow — but only with participants who add value, meet compliance requirements, and share the long-term vision for institutional blockchain.",
-  },
-  {
-    title: "Built together",
-    desc: "Our strongest partnerships have shaped the product. We work closely with early partners to co-develop features, validate use cases, and build standards that the wider market will follow.",
-  },
+const swiatBrings = [
+  "Dedicated professional team across tokenization use cases",
+  "Coverage of current and future DLT initiatives around securities",
+  "Priority access to new features and solutions",
+  "Roadmap alignment on key features",
+  "Joint marketing and thought leadership",
+];
+
+const partnerCommits = [
+  "Long-term partnership commitment",
+  "SWIAT as preferred DLT infrastructure for relevant use cases",
+  "Joint pipeline planning",
+  "Sharing learnings and feedback to improve the platform",
+  "Joint marketing — permission to use logos in related materials",
+];
+
+const partnerBenefits = [
+  { title: "Lower total cost", desc: "Package projects instead of totally independent setup" },
+  { title: "Higher efficiency", desc: "Single onboarding for multiple projects" },
+  { title: "One infrastructure", desc: "For all DLT-related projects on the roadmap" },
+  { title: "Trusted long-term partnership", desc: "Reduced management overhead" },
+  { title: "Locked in for new use cases", desc: "RL1 access and ecosystem benefits" },
 ];
 
 export default function PartnershipPage() {
@@ -105,12 +114,11 @@ export default function PartnershipPage() {
 
       {/* Stats bar */}
       <section className="border-b border-white/5 bg-[#07111f]">
-        <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} className="max-w-4xl mx-auto px-6 py-10 grid grid-cols-2 sm:grid-cols-4 gap-6">
+        <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} className="max-w-4xl mx-auto px-6 py-10 grid grid-cols-3 gap-6">
           {[
             { value: "50+", label: "Financial entities onboarded" },
             { value: ">50", label: "Financial institutions connected" },
-            { value: "3+", label: "Years of live network operation" },
-            { value: "€700M+", label: "Settlement volume processed" },
+            { value: "€1B+", label: "Settlement volume processed" },
           ].map(s => (
             <div key={s.label} className="text-center">
               <p className="text-[#7AC0CD] font-bold text-2xl mb-1">{s.value}</p>
@@ -153,33 +161,70 @@ export default function PartnershipPage() {
         </div>
       </section>
 
-      {/* Our principles */}
+      {/* How we partner */}
       <section className="py-24 px-6 bg-[#07111f] border-b border-white/5">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <p className="text-xs font-bold text-[#7AC0CD] uppercase tracking-widest mb-3">How we partner</p>
             <h2
               className="font-[family-name:var(--font-playfair)] font-bold text-white"
               style={{ fontSize: "clamp(1.6rem, 3vw, 2.25rem)" }}
             >
-              Our partnership principles
+              A long-term commitment to digital capital markets — together
             </h2>
           </div>
-          <div className="grid sm:grid-cols-3 gap-5">
-            {principles.map((p, i) => (
-              <motion.div
-                key={p.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="bg-white/3 border border-white/8 rounded-2xl p-7"
-              >
-                <span className="text-[#7AC0CD]/30 font-black text-4xl leading-none block mb-4 font-[family-name:var(--font-playfair)]">0{i + 1}</span>
-                <h3 className="text-white font-bold text-base mb-3">{p.title}</h3>
-                <p className="text-zinc-400 text-sm leading-relaxed">{p.desc}</p>
-              </motion.div>
-            ))}
+
+          <p className="text-center text-zinc-400 text-sm max-w-xl mx-auto mb-10">
+            Every partnership is shaped around what your institution actually needs — no fixed template, no one-size-fits-all. We work with you to define the right scope, timeline, and engagement model.
+          </p>
+
+          {/* Two columns: what SWIAT brings / what partner commits */}
+          <div className="grid sm:grid-cols-2 gap-6 mb-10">
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
+              className="bg-[#003946]/30 border border-[#7AC0CD]/20 rounded-2xl p-7">
+              <h3 className="text-[#7AC0CD] font-bold text-sm uppercase tracking-widest mb-5">What SWIAT brings</h3>
+              <ul className="flex flex-col gap-3">
+                {swiatBrings.map(item => (
+                  <li key={item} className="flex items-start gap-3 text-xs text-zinc-400">
+                    <svg className="w-3 h-3 text-[#7AC0CD]/60 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}
+              className="bg-white/3 border border-white/8 rounded-2xl p-7">
+              <h3 className="text-zinc-400 font-bold text-sm uppercase tracking-widest mb-5">What the partner commits</h3>
+              <ul className="flex flex-col gap-3">
+                {partnerCommits.map(item => (
+                  <li key={item} className="flex items-start gap-3 text-xs text-zinc-500">
+                    <svg className="w-3 h-3 text-zinc-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
+
+          {/* Benefits grid */}
+          <div>
+            <p className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-5">The benefits for partners</p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-10">
+              {partnerBenefits.map((b, i) => (
+                <motion.div key={b.title} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.35, delay: i * 0.06 }}
+                  className="bg-white/3 border border-white/8 rounded-xl p-4">
+                  <p className="text-white font-semibold text-sm mb-1">{b.title}</p>
+                  <p className="text-zinc-500 text-xs leading-relaxed">{b.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+            <div className="text-center">
+              <Link href="/contact" className="inline-flex items-center gap-2 bg-[#7AC0CD] hover:bg-[#93cfd9] text-[#050e1d] font-bold text-sm px-7 py-3.5 rounded-xl transition-colors">
+                Let&apos;s design your partnership
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -228,12 +273,6 @@ export default function PartnershipPage() {
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
-              </Link>
-              <Link
-                href="/solutions/swiat-access"
-                className="inline-flex items-center gap-2 border border-[#7AC0CD]/40 text-[#7AC0CD] hover:bg-[#7AC0CD]/10 font-semibold text-sm px-7 py-3.5 rounded-xl transition-colors"
-              >
-                Explore SWIAT Access
               </Link>
             </div>
           </motion.div>

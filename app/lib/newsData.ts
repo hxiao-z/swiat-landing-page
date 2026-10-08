@@ -13,6 +13,14 @@ export interface Article {
 export const articles: Article[] = [
   // 2026
   {
+    title: "Regulated Layer One (RL1) Founded by 10 European Financial Institutions",
+    date: "07 Oct 2026",
+    year: 2026,
+    category: "Partnership",
+    description: "RL1 is officially founded with 10 leading European financial institutions as founding members, establishing a shared regulated blockchain infrastructure for capital markets.",
+    href: "#",
+  },
+  {
     title: "SWIAT Appoints Felix Miederer as Co-CEO",
     date: "01 Jul 2026",
     year: 2026,

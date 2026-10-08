@@ -240,7 +240,22 @@ export default function SwiatAccessPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <PhotoFrame label="Upload image — team or infrastructure" />
+            <p className="text-xs font-bold text-[#7AC0CD] uppercase tracking-widest mb-3">Overview</p>
+            <h2
+              className="font-[family-name:var(--font-playfair)] font-bold text-white mb-5"
+              style={{ fontSize: "clamp(1.6rem, 3vw, 2.25rem)" }}
+            >
+              What is SWIAT Access?
+            </h2>
+            <p className="text-zinc-300 leading-relaxed mb-8">
+              A managed Plug&apos;n&apos;Play connectivity service — direct access to the SWIAT Blockchain for banks, fintechs, and asset managers, with no IT development or infrastructure investment required.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 bg-[#7AC0CD] hover:bg-[#93cfd9] text-[#050e1d] font-bold text-sm px-6 py-3 rounded-xl transition-colors"
+            >
+              Learn more — Contact us
+            </Link>
           </motion.div>
 
           <motion.div
@@ -249,35 +264,19 @@ export default function SwiatAccessPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <p className="text-xs font-bold text-[#7AC0CD] uppercase tracking-widest mb-3">Overview</p>
-            <h2
-              className="font-[family-name:var(--font-playfair)] font-bold text-white mb-5"
-              style={{ fontSize: "clamp(1.6rem, 3vw, 2.25rem)" }}
-            >
-              What is SWIAT Access?
-            </h2>
-            <p className="text-zinc-300 leading-relaxed mb-4">
-              SWIAT Access is a managed, Plug&apos;n&apos;Play connectivity service that gives regulated financial institutions direct access to the SWIAT Blockchain — without requiring internal IT development or infrastructure investment.
-            </p>
-            <p className="text-zinc-400 leading-relaxed mb-6">
-              Whether you are a bank, fintech, or asset manager looking to explore digital assets and DeFi applications, SWIAT Access removes the technical barriers to entry while ensuring full regulatory compliance at every layer.
-            </p>
-            <ul className="flex flex-col gap-3">
-              {["No further software required on your side", "Works without additional IT-resources", "Quick and easy setup for production", "Explore blockchain, digital assets & DeFi"].map(item => (
-                <li key={item} className="flex items-start gap-3 text-sm text-zinc-300">
-                  <svg className="w-4 h-4 text-[#7AC0CD] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                  </svg>
-                  {item}
-                </li>
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { title: "Zero software overhead", desc: "No additional software required on your side" },
+                { title: "No IT resources needed", desc: "Fully managed — SWIAT handles the infrastructure" },
+                { title: "Fast to production", desc: "Quick and easy setup, ready for live transactions" },
+                { title: "Explore digital assets", desc: "Access blockchain, digital assets & DeFi from day one" },
+              ].map(item => (
+                <div key={item.title} className="bg-white/3 border border-white/8 rounded-xl p-4">
+                  <p className="text-white font-semibold text-sm mb-1">{item.title}</p>
+                  <p className="text-zinc-500 text-xs leading-relaxed">{item.desc}</p>
+                </div>
               ))}
-            </ul>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 mt-8 bg-[#7AC0CD] hover:bg-[#93cfd9] text-[#050e1d] font-bold text-sm px-6 py-3 rounded-xl transition-colors"
-            >
-              Learn more — Contact us
-            </Link>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -376,40 +375,6 @@ export default function SwiatAccessPage() {
       </section>
 
       {/* How to get SWIAT Access — steps */}
-      <section className="bg-[#050e1d] border-t border-white/5 py-24 px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-14">
-            <p className="text-xs font-bold text-[#7AC0CD] uppercase tracking-widest mb-3">Onboarding</p>
-            <h2
-              className="font-[family-name:var(--font-playfair)] font-bold text-white"
-              style={{ fontSize: "clamp(1.6rem, 3vw, 2.25rem)" }}
-            >
-              How to get SWIAT Access?
-            </h2>
-            <p className="text-zinc-400 text-sm mt-3 max-w-md mx-auto">
-              From first contact to production in four simple steps.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 gap-5">
-            {steps.map((s, i) => (
-              <motion.div
-                key={s.step}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="bg-white/3 border border-white/8 rounded-2xl p-6 hover:border-[#7AC0CD]/25 transition-all"
-              >
-                <span className="text-[#7AC0CD]/40 font-bold text-3xl leading-none block mb-3">{s.step}</span>
-                <h3 className="text-white font-bold text-base mb-2">{s.title}</h3>
-                <p className="text-zinc-400 text-sm leading-relaxed">{s.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Final CTA */}
       <section className="bg-[#003946]/30 border-t border-[#7AC0CD]/15 py-24 px-6">
         <div className="max-w-3xl mx-auto text-center">

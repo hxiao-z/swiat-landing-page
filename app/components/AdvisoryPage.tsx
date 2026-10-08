@@ -86,9 +86,6 @@ export default function AdvisoryPage() {
             <p className="text-white/80 text-lg leading-relaxed mb-4 font-medium">
               Hands-on expertise to help your institution go from blockchain strategy to live network participation — faster and with confidence.
             </p>
-            <p className="text-zinc-400 leading-relaxed mb-8">
-              SWIAT's professional services team brings together capital markets, technology and regulatory expertise. Whether you are exploring your first digital asset pilot or scaling to full network integration, we work alongside your teams to get it right.
-            </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/contact" className="inline-flex items-center gap-2 bg-[#7AC0CD] hover:bg-[#93cfd9] text-[#050e1d] font-bold text-sm px-6 py-3.5 rounded-xl transition-colors">
                 Talk to our team
@@ -125,32 +122,31 @@ export default function AdvisoryPage() {
       <section className="bg-[#0a1628] py-24 px-6">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <PhotoFrame label="Upload image — team or whiteboard session" />
-          </motion.div>
-          <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
             <p className="text-xs font-bold text-[#7AC0CD] uppercase tracking-widest mb-3">Overview</p>
             <h2 className="font-[family-name:var(--font-playfair)] font-bold text-white mb-5" style={{ fontSize: "clamp(1.6rem, 3vw, 2.25rem)" }}>
-              Built for banks, delivered by practitioners
+              Built for financial institutions, delivered by practitioners
             </h2>
             <p className="text-zinc-300 leading-relaxed mb-4">
               The SWIAT professional services team is not a generic consulting overlay — it is the same group of specialists who built the network. We bring first-hand knowledge of what it takes to connect a regulated financial institution to blockchain infrastructure and make it work in production.
             </p>
-            <p className="text-zinc-400 leading-relaxed mb-6">
+            <p className="text-zinc-400 leading-relaxed">
               We work in close collaboration with your legal, compliance, technology and operations teams — adapting our approach to your institution's structure and timeline.
             </p>
-            <ul className="flex flex-col gap-3">
+          </motion.div>
+          <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
+            <div className="grid grid-cols-2 gap-4">
               {[
-                "Integration design, testing and go-live support",
-                "Regulatory and legal advisory for digital asset frameworks",
-                "Target operating model design for digital workflows",
-                "Training for front office, operations and compliance teams",
+                { title: "Integration support", desc: "Integration design, testing and go-live support" },
+                { title: "Regulatory advisory", desc: "Legal and regulatory advisory for digital asset frameworks" },
+                { title: "Operating model", desc: "Target operating model design for digital workflows" },
+                { title: "Training", desc: "Front office, operations and compliance team training" },
               ].map(item => (
-                <li key={item} className="flex items-start gap-3 text-sm text-zinc-300">
-                  <svg className="w-4 h-4 text-[#7AC0CD] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
-                  {item}
-                </li>
+                <div key={item.title} className="bg-white/3 border border-white/8 rounded-xl p-4">
+                  <p className="text-white font-semibold text-sm mb-1">{item.title}</p>
+                  <p className="text-zinc-500 text-xs leading-relaxed">{item.desc}</p>
+                </div>
               ))}
-            </ul>
+            </div>
           </motion.div>
         </div>
       </section>

@@ -10,18 +10,8 @@ const credentials = [
         <path d="M9 12l2 2 4-4" stroke="#7AC0CD" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    label: "BaFin Licensed",
-    sub: "Supervised financial infrastructure",
-  },
-  {
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" aria-hidden="true">
-        <rect x="3" y="3" width="18" height="18" rx="3" stroke="#7AC0CD" strokeWidth="1.5" />
-        <path d="M7 12h10M7 8h6M7 16h8" stroke="#7AC0CD" strokeWidth="1.5" strokeLinecap="round" />
-      </svg>
-    ),
-    label: "eWpG Registry",
-    sub: "Crypto securities under German law",
+    label: "BaFin Licensed · eWpG",
+    sub: "Supervised infrastructure & crypto-securities registry",
   },
   {
     icon: (
@@ -46,6 +36,15 @@ const credentials = [
     label: "Built on RL1",
     sub: "Europe's regulated blockchain network",
   },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" aria-hidden="true">
+        <path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4m0 0h18" stroke="#7AC0CD" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    label: "Government R&D Certified",
+    sub: "Official R&D certification recognised by German authorities",
+  },
 ];
 
 export default function CredentialsBar() {
@@ -55,7 +54,7 @@ export default function CredentialsBar() {
         <p className="text-center text-xs text-zinc-500 uppercase tracking-widest mb-7">
           Regulated · Certified · Production-Ready
         </p>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 gap-4 max-w-2xl mx-auto">
           {credentials.map((c, i) => (
             <motion.div
               key={c.label}

@@ -155,7 +155,7 @@ export default function WhyJoinPage() {
             { value: "34", label: "People on the team" },
             { value: "Frankfurt", label: "Home base" },
             { value: "10+", label: "Nationalities" },
-            { value: "2019", label: "Founded" },
+            { value: "2022", label: "Founded" },
           ].map(s => (
             <div key={s.label}>
               <p className="text-[#7AC0CD] font-bold text-xl">{s.value}</p>
