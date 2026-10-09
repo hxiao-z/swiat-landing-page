@@ -185,63 +185,26 @@ const navItems: NavItem[] = [
     label: "Solutions",
     href: "#solutions",
     mega: {
-      width: "w-[540px]",
+      width: "w-[720px]",
       columns: [
         {
-          heading: "Digital Asset Solutions",
+          heading: "Financial Applications",
           items: [
-            { icon: icons.tokenization, label: "Tokenisation & Settlement Software", href: "/solutions/tokenization" },
             { icon: icons.registry, label: "Registry Services", href: "/solutions/registry-services" },
+            { icon: icons.collateral, label: "Collateral ConneX (CCX)", href: "/solutions/collateral-management" },
           ],
         },
         {
-          heading: "Digital Collateral Solutions",
+          heading: "Run Your Own Application",
           items: [
-            { icon: icons.collateral, label: 'Collateral ConneX ("CCX")', href: "/solutions/collateral-management" },
+            { icon: icons.tokenization, label: "Tokenisation & Settlement", href: "/solutions/tokenization" },
+            { icon: icons.access, label: "Access & Connectivity", href: "/solutions/swiat-access" },
           ],
         },
-      ],
-    },
-  },
-
-  // 2 ── SWIAT Services
-  {
-    label: "SWIAT Services",
-    href: "#swiat-services",
-    simple: {
-      width: "w-[340px]",
-      columns: [
         {
-          sections: [
-            {
-              heading: "SWIAT Services",
-              items: [
-                {
-                  icon: icons.access,
-                  label: "Access & Connectivity",
-                  href: "/solutions/swiat-access",
-                  description: "Connect your institution to the SWIAT network.",
-                },
-                {
-                  icon: icons.network,
-                  label: "RL1 Network Operator",
-                  href: "https://rl1.network/",
-                  description: "The regulated layer 1 blockchain network powering SWIAT.",
-                },
-                {
-                  icon: icons.baas,
-                  label: "Trade Guardian Compliance Solution",
-                  href: "/services/trade-guardian",
-                  description: "Compliance and trade monitoring on regulated infrastructure.",
-                },
-                {
-                  icon: icons.whitepaper,
-                  label: "Prof. Services & Advisory",
-                  href: "/services/advisory",
-                  description: "Hands-on support for integration, architecture, and go-live.",
-                },
-              ],
-            },
+          heading: "Professional Services",
+          items: [
+            { icon: icons.whitepaper, label: "Advisory & Integration", href: "/services/advisory" },
           ],
         },
       ],
