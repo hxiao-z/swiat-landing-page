@@ -66,9 +66,18 @@ const services = [
 ];
 
 const engagementTypes = [
-  { title: "Pilot sprint", desc: "A focused 4–8 week engagement to design, test and execute your first use case on the SWIAT network." },
-  { title: "Integration project", desc: "End-to-end project support for connecting your systems to SWIAT — from scoping through go-live." },
-  { title: "Ongoing retainer", desc: "A standing advisory relationship for institutions that want continued access to SWIAT expertise as their digital asset business grows." },
+  {
+    title: "SWIAT for Financial Institutions",
+    desc: "Regulatory-compliant, secure, frictionless real-time issuance, trading, and settlement for various asset types — on a global scale with regulated entities across jurisdictions. SWIAT enables digital assets at the heart of banking.",
+  },
+  {
+    title: "SWIAT for FinTechs",
+    desc: "Leverage SWIAT's existing regulated infrastructure to build your own solution and shorten your development cycle. Shape the financial infrastructure of tomorrow and directly market your services to SWIAT members.",
+  },
+  {
+    title: "Pilot Sprint",
+    desc: "A focused 4–8 week engagement to design, test, and execute your first use case on the SWIAT network — with direct support from our professional services team.",
+  },
 ];
 
 export default function AdvisoryPage() {
@@ -173,24 +182,36 @@ export default function AdvisoryPage() {
         </div>
       </section>
 
-      {/* Engagement types */}
+
+      {/* Proven Use Cases */}
       <section className="bg-[#050e1d] border-t border-white/5 py-24 px-6">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
-            <p className="text-xs font-bold text-[#7AC0CD] uppercase tracking-widest mb-3">Engagement models</p>
+            <p className="text-xs font-bold text-[#7AC0CD] uppercase tracking-widest mb-3">Proven Use Cases</p>
             <h2 className="font-[family-name:var(--font-playfair)] font-bold text-white" style={{ fontSize: "clamp(1.6rem, 3vw, 2.25rem)" }}>
-              How we work with you
+              Live transactions. Real institutions.
             </h2>
           </div>
-          <div className="grid sm:grid-cols-3 gap-5">
-            {engagementTypes.map((e, i) => (
-              <motion.div key={e.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="bg-white/3 border border-white/8 rounded-2xl p-6 hover:border-[#7AC0CD]/25 transition-all">
-                <span className="text-[#7AC0CD]/40 font-bold text-3xl leading-none block mb-3">0{i + 1}</span>
-                <h3 className="text-white font-bold text-base mb-2">{e.title}</h3>
-                <p className="text-zinc-400 text-sm leading-relaxed">{e.desc}</p>
-              </motion.div>
-            ))}
+
+          <div className="flex justify-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="bg-white/3 border border-white/8 rounded-2xl p-8 hover:border-[#7AC0CD]/30 transition-all flex flex-col gap-5 max-w-2xl w-full"
+            >
+              <span className="text-xs font-bold text-[#7AC0CD] uppercase tracking-widest">Bank of Greece · Project Sovereign</span>
+              <h3 className="text-white font-bold text-base leading-snug">On-chain CSD use case demonstrated with the Bank of Greece</h3>
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                Project Sovereign demonstrated a compelling on-chain CSD use case with the Bank of Greece — exploring DLT-based digital bond issuance and settlement. The project was delivered with SWIAT's professional services team providing end-to-end advisory, architecture support, and go-live coordination.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {["Digital Bond · CSD on Chain", "Advisory", "Go-Live Support"].map(t => (
+                  <span key={t} className="text-[10px] font-medium text-zinc-400 border border-white/10 rounded-full px-2.5 py-1">{t}</span>
+                ))}
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>

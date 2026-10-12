@@ -17,12 +17,12 @@ export default function Home() {
         <Navbar />
       </div>
       <HeroSection />
-      <CredentialsBar />
       <TrustSection />
       <WhatWeDoSection />
       <AssetsSection />
       <CtaBand />
       <NewsSection />
+      <CredentialsBar />
       <Footer />
     </div>
   );

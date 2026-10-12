@@ -327,49 +327,138 @@ export default function SwiatAccessPage() {
         </div>
       </section>
 
-      {/* Partnership with adesso */}
-      <section className="bg-[#0a1628] border-t border-white/5 py-24 px-6">
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+      {/* Proven Use Cases */}
+      <section className="bg-[#050e1d] border-t border-white/5 py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            <p className="text-xs font-bold text-[#7AC0CD] uppercase tracking-widest mb-3">Proven Use Cases</p>
+            <h2
+              className="font-[family-name:var(--font-playfair)] font-bold text-white"
+              style={{ fontSize: "clamp(1.6rem, 3vw, 2.25rem)" }}
+            >
+              Live institutions. Real operations.
+            </h2>
+          </div>
+
+          <div className="flex justify-center">
+            {[
+              {
+                logo: "adesso",
+                headline: "SWIAT Access delivered in partnership with adesso",
+                desc: "SWIAT has partnered with adesso — one of Europe's leading IT service companies — to deliver SWIAT Access with the engineering rigour and institutional reliability that financial markets demand.",
+                tag: "Technology Partnership · Managed Onboarding",
+              },
+            ].map((uc, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="bg-white/3 border border-white/8 rounded-2xl p-8 hover:border-[#7AC0CD]/30 transition-all flex flex-col gap-5 max-w-lg w-full"
+              >
+                <span className="text-xs font-bold text-[#7AC0CD] uppercase tracking-widest">{uc.logo}</span>
+                <h3 className="text-white font-bold text-base leading-snug">{uc.headline}</h3>
+                <p className="text-zinc-400 text-sm leading-relaxed flex-1">{uc.desc}</p>
+                <div className="flex flex-wrap gap-2">
+                  {uc.tag.split(" · ").map(t => (
+                    <span key={t} className="text-[10px] font-medium text-zinc-400 border border-white/10 rounded-full px-2.5 py-1">{t}</span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Technical Setup */}
+      <section className="bg-[#07111f] border-t border-white/5 py-24 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-14">
+            <p className="text-xs font-bold text-[#7AC0CD] uppercase tracking-widest mb-3">Technical Setup</p>
+            <h2
+              className="font-[family-name:var(--font-playfair)] font-bold text-white"
+              style={{ fontSize: "clamp(1.6rem, 3vw, 2.25rem)" }}
+            >
+              How SWIAT Access connects your institution
+            </h2>
+            <p className="text-zinc-400 text-sm mt-3 max-w-lg mx-auto">
+              No blockchain engineers. No infrastructure to manage. Your team logs in, SWIAT handles everything underneath — nodes, compliance, uptime, and upgrades.
+            </p>
+          </div>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="flex flex-col lg:flex-row items-stretch gap-4"
           >
-            <p className="text-xs font-bold text-[#7AC0CD] uppercase tracking-widest mb-3">Partnership</p>
-            <h2
-              className="font-[family-name:var(--font-playfair)] font-bold text-white mb-5"
-              style={{ fontSize: "clamp(1.6rem, 3vw, 2.25rem)" }}
-            >
-              A proven partnership with adesso
-            </h2>
-            <p className="text-zinc-300 leading-relaxed mb-4">
-              SWIAT has partnered with adesso — one of Europe&apos;s leading IT service companies — to deliver SWIAT Access with the engineering rigour and institutional reliability that financial markets demand.
-            </p>
-            <p className="text-zinc-400 leading-relaxed mb-8">
-              adesso&apos;s deep IT expertise combined with SWIAT&apos;s blockchain infrastructure creates a solution that is both technically robust and operationally trusted by regulated entities.
-            </p>
-            <div className="flex items-center gap-4 p-5 bg-white/3 border border-white/8 rounded-2xl">
-              <div className="w-12 h-12 rounded-xl bg-[#003946]/60 border border-[#7AC0CD]/20 flex items-center justify-center shrink-0">
-                <svg className="w-6 h-6 text-[#7AC0CD]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-              </div>
-              <div>
-                <p className="text-white font-bold text-sm">Ivica Aračić</p>
-                <p className="text-[#7AC0CD] text-xs font-medium">Chief Technology Officer, SWIAT</p>
-                <p className="text-zinc-400 text-xs mt-1">Contact: info@swiat.io</p>
+            {/* Left: Financial Institution */}
+            <div className="flex-1 bg-white/3 border border-white/10 rounded-2xl p-6 flex flex-col gap-4">
+              <p className="text-xs font-bold text-zinc-400 uppercase tracking-widest">Your Institution</p>
+              <div className="flex flex-col gap-3 flex-1 justify-center">
+                {["Compliance Team", "Front Office", "Operations"].map(u => (
+                  <div key={u} className="flex items-center gap-3 bg-white/3 border border-white/8 rounded-xl px-4 py-3">
+                    <svg className="w-4 h-4 text-zinc-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                    <span className="text-zinc-300 text-sm">{u}</span>
+                  </div>
+                ))}
               </div>
             </div>
-          </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            <PhotoFrame label="Upload image — adesso partnership" />
+            {/* Arrow */}
+            <div className="flex items-center justify-center lg:flex-col lg:justify-center px-2">
+              <svg className="w-6 h-6 text-[#7AC0CD]/50 rotate-0 lg:rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </div>
+
+            {/* Middle: SWIAT Access Layer */}
+            <div className="flex-[1.4] bg-[#003946]/40 border border-[#7AC0CD]/25 rounded-2xl p-6 flex flex-col gap-4">
+              <div className="flex items-center gap-2 mb-1">
+                <div className="w-2 h-2 rounded-full bg-[#7AC0CD]" />
+                <p className="text-xs font-bold text-[#7AC0CD] uppercase tracking-widest">SWIAT Access Layer</p>
+              </div>
+              <div className="grid grid-cols-1 gap-3">
+                {[
+                  { label: "Browser / GUI", sub: "Ready-to-use web interface" },
+                  { label: "Managed Node", sub: "Operated and maintained by SWIAT" },
+                  { label: "Private Database", sub: "Institution-side data storage" },
+                ].map(item => (
+                  <div key={item.label} className="bg-[#050e1d]/60 border border-white/8 rounded-xl px-4 py-3">
+                    <p className="text-white font-semibold text-sm">{item.label}</p>
+                    <p className="text-zinc-500 text-xs mt-0.5">{item.sub}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Arrow */}
+            <div className="flex items-center justify-center px-2">
+              <svg className="w-6 h-6 text-[#7AC0CD]/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </div>
+
+            {/* Right: Blockchain Network */}
+            <div className="flex-1 bg-white/3 border border-white/10 rounded-2xl p-6 flex flex-col gap-4">
+              <p className="text-xs font-bold text-zinc-400 uppercase tracking-widest">RL1 Network</p>
+              <div className="flex flex-col gap-3 flex-1 justify-center">
+                {[
+                  { label: "dApp", sub: "Smart contract layer" },
+                  { label: "Validator Nodes", sub: "Distributed network" },
+                  { label: "SWIAT Infrastructure", sub: "Regulated Layer One" },
+                ].map(item => (
+                  <div key={item.label} className="bg-white/3 border border-white/8 rounded-xl px-4 py-3">
+                    <p className="text-white font-semibold text-sm">{item.label}</p>
+                    <p className="text-zinc-500 text-xs mt-0.5">{item.sub}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>

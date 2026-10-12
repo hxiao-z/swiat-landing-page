@@ -94,8 +94,9 @@ export default function HeroSection() {
           style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
           className="font-[family-name:var(--font-playfair)] font-bold text-white leading-tight"
         >
-          The Platform for <span style={{ color: "#7AC0CD" }}>Digital Capital</span>
-          <br />Market Infrastructure
+          Digital Capital Markets,{" "}
+          <br />
+          <span style={{ color: "#7AC0CD" }}>Built for Regulated Institutions</span>
         </motion.h1>
 
         {/* Subline */}
@@ -105,7 +106,7 @@ export default function HeroSection() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-lg text-zinc-400 max-w-2xl leading-relaxed"
         >
-          A regulated software platform connecting financial institutions to digital capital markets — from issuance to settlement, built on Regulated Layer One.
+          Capital markets move slow. SWIAT makes settlement instant, compliant, and fully digital — so banks and financial institutions can operate on-chain today.
         </motion.p>
 
         {/* Stats */}

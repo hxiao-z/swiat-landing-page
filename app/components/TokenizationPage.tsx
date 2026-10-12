@@ -220,46 +220,6 @@ export default function TokenizationPage() {
         </div>
       </section>
 
-      {/* Use cases */}
-      <section className="bg-[#07111f] border-t border-white/5 py-24 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-10">
-            <p className="text-xs font-bold text-[#7AC0CD] uppercase tracking-widest mb-3">Use Cases</p>
-            <h2
-              className="font-[family-name:var(--font-playfair)] font-bold text-white"
-              style={{ fontSize: "clamp(1.6rem, 3vw, 2.25rem)" }}
-            >
-              Choose your token form
-            </h2>
-          </div>
-          <div className="flex flex-col gap-3 items-center">
-            {[
-              ["Registered Bond", "Bearer Bonds", "Security Tokens"],
-              ["Commercial Paper", "Fund Units", "Real Estate Tokens"],
-              ["Repo Instruments", "Bring your own use case →"],
-            ].map((row, ri) => (
-              <div key={ri} className="flex gap-3 justify-center flex-wrap">
-                {row.map((label, i) => (
-                  <motion.span
-                    key={label}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: (ri * 3 + i) * 0.05 }}
-                    className={`px-4 py-2 rounded-full text-sm font-medium border transition-colors ${
-                      label === "Bring your own use case →"
-                        ? "border-[#7AC0CD]/60 text-[#7AC0CD] bg-[#003946]/40 cursor-default"
-                        : "border-white/10 text-zinc-300 bg-white/3"
-                    }`}
-                  >
-                    {label}
-                  </motion.span>
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Benefits */}
       <section className="bg-[#0a1628] border-t border-white/5 py-24 px-6">
@@ -351,59 +311,35 @@ export default function TokenizationPage() {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* How it works */}
-      <section className="bg-[#050e1d] border-t border-white/5 py-24 px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-14">
-            <p className="text-xs font-bold text-[#7AC0CD] uppercase tracking-widest mb-3">How it works</p>
-            <h2
-              className="font-[family-name:var(--font-playfair)] font-bold text-white"
-              style={{ fontSize: "clamp(1.6rem, 3vw, 2.25rem)" }}
-            >
-              From issuance to redemption
-            </h2>
-            <p className="text-zinc-400 text-sm mt-3 max-w-md mx-auto">
-              The complete asset lifecycle — managed in one place.
-            </p>
+          <div className="mt-12">
+            <p className="text-xs font-bold text-[#7AC0CD] uppercase tracking-widest mb-5 text-center">Supported Token Forms</p>
+            <div className="flex flex-col gap-3 items-center">
+              {[
+                ["Registered Bond", "Bearer Bonds", "Security Tokens", "Commercial Paper", "Fund Units", "Real Estate Tokens", "Repo Instruments"],
+                ["Bring your own use case →"],
+              ].map((row, ri) => (
+                <div key={ri} className="flex gap-3 justify-center flex-wrap">
+                  {row.map((label, i) => (
+                    <motion.span
+                      key={label}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.3, delay: (ri * 3 + i) * 0.05 }}
+                      className={`px-4 py-2 rounded-full text-sm font-medium border transition-colors ${
+                        label === "Bring your own use case →"
+                          ? "border-[#7AC0CD]/60 text-[#7AC0CD] bg-[#003946]/40 cursor-default"
+                          : "border-white/10 text-zinc-300 bg-white/3"
+                      }`}
+                    >
+                      {label}
+                    </motion.span>
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
-
-          <div className="grid sm:grid-cols-2 gap-5">
-            {steps.map((s, i) => (
-              <motion.div
-                key={s.step}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="bg-white/3 border border-white/8 rounded-2xl p-6 hover:border-[#7AC0CD]/25 transition-all"
-              >
-                <span className="text-[#7AC0CD]/40 font-bold text-3xl leading-none block mb-3">{s.step}</span>
-                <h3 className="text-white font-bold text-base mb-2">{s.title}</h3>
-                <p className="text-zinc-400 text-sm leading-relaxed">{s.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.2 }}
-            className="mt-10 text-center"
-          >
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-[#7AC0CD] hover:bg-[#93cfd9] text-[#050e1d] font-bold text-sm px-7 py-3.5 rounded-xl transition-colors"
-            >
-              Talk to an expert
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
-          </motion.div>
         </div>
       </section>
 
