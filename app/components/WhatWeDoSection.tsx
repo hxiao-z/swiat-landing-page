@@ -85,14 +85,13 @@ export default function WhatWeDoSection() {
         {/* Pillars */}
         <div className="grid md:grid-cols-3 gap-6">
           {pillars.map((p, i) => (
-            <motion.a
+            <motion.div
               key={p.number}
-              href={p.href}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group relative flex flex-col bg-white/3 border border-white/8 rounded-2xl p-7 hover:border-[#7AC0CD]/40 hover:bg-white/5 transition-all"
+              className="group relative flex flex-col bg-white/3 border border-white/8 rounded-2xl p-7"
             >
               {/* Number */}
               <span className="text-[#7AC0CD]/30 text-5xl font-bold font-[family-name:var(--font-playfair)] leading-none mb-5 select-none">
@@ -143,7 +142,7 @@ export default function WhatWeDoSection() {
                   <path d="M3 13L13 3M13 3H7M13 3v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
-            </motion.a>
+            </motion.div>
           ))}
         </div>
         {/* CTA */}
