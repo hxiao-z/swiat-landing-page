@@ -7,6 +7,7 @@ import TrustSection from "./components/TrustSection";
 import AssetsSection from "./components/AssetsSection";
 import CtaBand from "./components/CtaBand";
 import NewsSection from "./components/NewsSection";
+import FinalCta from "./components/FinalCta";
 import Footer from "./components/Footer";
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
       <CtaBand />
       <NewsSection />
       <CredentialsBar />
+      <FinalCta />
       <Footer />
     </div>
   );

@@ -94,9 +94,9 @@ export default function HeroSection() {
           style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
           className="font-[family-name:var(--font-playfair)] font-bold text-white leading-tight"
         >
-          Digital Capital Markets,{" "}
+          Europe&apos;s Leading Platform for{" "}
           <br />
-          <span style={{ color: "#7AC0CD" }}>Built for Regulated Institutions</span>
+          <span style={{ color: "#7AC0CD" }}>Digital Securities Issuance and Settlement</span>
         </motion.h1>
 
         {/* Subline */}

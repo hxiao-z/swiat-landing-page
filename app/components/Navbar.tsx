@@ -195,7 +195,7 @@ const navItems: NavItem[] = [
           ],
         },
         {
-          heading: "Run Your Own Application",
+          heading: "Run Your Own dApp",
           items: [
             { icon: icons.tokenization, label: "Tokenisation & Settlement", href: "/solutions/tokenization" },
             { icon: icons.access, label: "Access & Connectivity", href: "/solutions/swiat-access" },
