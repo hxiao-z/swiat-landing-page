@@ -4,11 +4,11 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-type Category = "All" | "Report" | "ECB Trial" | "Whitepaper";
+type Category = "All" | "SWIAT Solutions" | "Project Report" | "ECB Report";
 
 const papers = [
   {
-    tag: "Report",
+    tag: "SWIAT Solutions" as Category,
     tagColor: "text-[#7AC0CD] border-[#7AC0CD]/30 bg-[#7AC0CD]/10",
     title: "SWIAT Access Report",
     desc: "A detailed overview of the SWIAT Access solution — including use cases with DZ Bank within the ECB Trials and Bank of Greece under Project Sovereign.",
@@ -20,8 +20,8 @@ const papers = [
     href: "#",
   },
   {
-    tag: "Report",
-    tagColor: "text-[#7AC0CD] border-[#7AC0CD]/30 bg-[#7AC0CD]/10",
+    tag: "Project Report" as Category,
+    tagColor: "text-emerald-300 border-emerald-400/30 bg-emerald-400/10",
     title: "Project Sovereign Report",
     desc: "A comprehensive overview of Project Sovereign — powered by SWIAT's DLT infrastructure with full DvP settlement across an entire digital bond lifecycle.",
     highlights: [
@@ -32,8 +32,8 @@ const papers = [
     href: "#",
   },
   {
-    tag: "Report",
-    tagColor: "text-[#7AC0CD] border-[#7AC0CD]/30 bg-[#7AC0CD]/10",
+    tag: "Project Report" as Category,
+    tagColor: "text-emerald-300 border-emerald-400/30 bg-emerald-400/10",
     title: "Bank of Greece Project Report",
     desc: "A detailed overview of the Digital Bond project by SWIAT & Bank of Greece — covering each project phase with visuals, diagrams, and target operating model.",
     highlights: [
@@ -44,7 +44,7 @@ const papers = [
     href: "#",
   },
   {
-    tag: "ECB Trial",
+    tag: "ECB Report" as Category,
     tagColor: "text-purple-300 border-purple-400/30 bg-purple-400/10",
     title: "ECB Trials Report",
     desc: "SWIAT participated in the ECB Trials in 2024, executing 8 settlements on the SWIAT blockchain. Includes transaction workflows, tech overviews, and institutional statements.",
@@ -56,8 +56,8 @@ const papers = [
     href: "#",
   },
   {
-    tag: "Whitepaper",
-    tagColor: "text-amber-300 border-amber-400/30 bg-amber-400/10",
+    tag: "SWIAT Solutions" as Category,
+    tagColor: "text-[#7AC0CD] border-[#7AC0CD]/30 bg-[#7AC0CD]/10",
     title: "SCO60 Whitepaper",
     desc: "Digital assets are soaring — and in scope of new Basel regulation. This paper introduces SCO60 on cryptoassets, the SWIAT Governance Model, and market implications.",
     highlights: [
@@ -68,8 +68,8 @@ const papers = [
     href: "#",
   },
   {
-    tag: "Whitepaper",
-    tagColor: "text-amber-300 border-amber-400/30 bg-amber-400/10",
+    tag: "SWIAT Solutions" as Category,
+    tagColor: "text-[#7AC0CD] border-[#7AC0CD]/30 bg-[#7AC0CD]/10",
     title: "Moody's Rating — Bits, Bytes and Basis Points",
     desc: "How digital assets fit within incoming Basel regulation and what it means for banks — options available, ecosystem impact, and how the SWIAT framework can help.",
     highlights: [
@@ -81,8 +81,8 @@ const papers = [
     href: "#",
   },
   {
-    tag: "Whitepaper",
-    tagColor: "text-amber-300 border-amber-400/30 bg-amber-400/10",
+    tag: "SWIAT Solutions" as Category,
+    tagColor: "text-[#7AC0CD] border-[#7AC0CD]/30 bg-[#7AC0CD]/10",
     title: "CYCROS Whitepaper — Enable DvP with CYCROS",
     desc: "Co-developed with DekaBank: a non-invasive trigger-based solution enabling delivery of digital assets versus payment with central bank money — using ISO 20022 and SWIFT PKI.",
     highlights: [
@@ -115,7 +115,7 @@ const quotes = [
   },
 ];
 
-const categories: Category[] = ["All", "Report", "ECB Trial", "Whitepaper"];
+const categories: Category[] = ["All", "SWIAT Solutions", "Project Report", "ECB Report"];
 
 export default function ResearchPage() {
   const [active, setActive] = useState<Category>("All");
