@@ -235,7 +235,6 @@ const navItems: NavItem[] = [
               heading: "Engage",
               items: [
                 { icon: icons.conference, label: "SWIAT Conference", href: "/conference" },
-                { icon: icons.partners, label: "Partnership", href: "/partnership" },
                 { icon: icons.newsletter, label: "Newsletter", href: "/contact#newsletter" },
               ],
             },
@@ -250,28 +249,17 @@ const navItems: NavItem[] = [
     label: "Company",
     href: "#company",
     simple: {
-      width: "w-[380px]",
+      width: "w-[220px]",
       columns: [
         {
           sections: [
             {
-              heading: "About Us",
+              heading: "",
               items: [
                 { icon: icons.about, label: "About SWIAT", href: "/about" },
                 { icon: icons.team, label: "Team", href: "/team" },
                 { icon: icons.news, label: "Press Release", href: "/news" },
-              ],
-            },
-          ],
-        },
-        {
-          sections: [
-            {
-              heading: "Careers",
-              items: [
                 { icon: icons.whyJoin, label: "Why join us", href: "/careers/why-join-us" },
-                { icon: icons.openPositions, label: "Open Positions", href: "https://swiat.kenjo.io/" },
-                { icon: icons.contact, label: "Contact Us", href: "/contact" },
               ],
             },
           ],
