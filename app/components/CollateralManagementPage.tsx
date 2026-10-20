@@ -1,7 +1,7 @@
 "use client";
 
-import { useId } from "react";
-import { motion } from "framer-motion";
+import { useId, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
 function PhotoFrame({ label, src }: { label: string; src?: string }) {
@@ -45,27 +45,27 @@ const benefits = [
     icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>,
   },
   {
-    title: "Legal certainty. Minimal change.",
+    title: "Legal certainty with minimal operational change",
     desc: "Legal title stays within traditional custody infrastructure. Existing Global Custody Agreements can largely be reused — reducing legal complexity and onboarding effort for existing clients.",
     icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>,
   },
   {
-    title: "One standard. Seamless connectivity.",
+    title: "One standard for seamless connectivity",
     desc: "A single standardised instruction model eliminates fragmented messaging and processing breaks — seamlessly interoperable with custodians, tri-party agents, and agent lenders.",
     icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>,
   },
   {
-    title: "Full transparency. Always reconciled.",
+    title: "Full transparency with automatic reconciliation",
     desc: "Single unified view of all collateral positions, automatically reconciled — significantly reducing operational overhead and enabling better decision-making and asset allocation.",
     icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0zm-3-9v2m0 14v2m9-9h-2M5 12H3" /></svg>,
   },
   {
-    title: "Lower PFE / CCR / RWA",
+    title: "Reduced capital charges and trapped liquidity",
     desc: "Instant settlement minimises potential future exposure and counterparty credit risk — reducing capital charges and unlocking trapped liquidity across your book.",
     icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
   },
   {
-    title: "Internal efficiency without market adoption",
+    title: "Immediate intra-group value before wider adoption",
     desc: "Intra-group collateral optimisation delivers real value immediately — real-time transfers across entities and jurisdictions, even before external counterparties join.",
     icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>,
   },
@@ -116,6 +116,79 @@ const steps = [
   { step: "03", title: "Allocate in real time", desc: "Post or receive collateral instantly across the SWIAT network — intraday, cross-border, without batch windows or manual steps." },
   { step: "04", title: "Automate the lifecycle", desc: "Margin calls, substitutions, and returns are handled automatically based on your rules — freeing up your operations team entirely." },
 ];
+
+function CcxUseCases() {
+  const [active, setActive] = useState(0);
+  const uc = useCases[active];
+  return (
+    <section className="bg-[#050e1d] border-t border-white/5 py-24 px-6">
+      <div className="max-w-6xl mx-auto">
+
+        {/* Header — left-aligned title, right subtitle */}
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-14">
+          <div>
+            <p className="text-xs font-bold text-[#7AC0CD] uppercase tracking-widest mb-4">CCX Use Cases</p>
+            <h2 className="font-[family-name:var(--font-playfair)] font-bold text-white leading-tight" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+              Mobilise collateral globally
+            </h2>
+          </div>
+          <p className="text-zinc-400 text-sm leading-relaxed lg:max-w-xs lg:text-right">
+            Across every product type and time zone — real-time, cross-border, with zero manual steps.
+          </p>
+        </div>
+
+        {/* Tab row */}
+        <div className="grid grid-cols-3 lg:grid-cols-6 border-b border-white/10">
+          {useCases.map((item, i) => (
+            <button
+              key={item.num}
+              onMouseEnter={() => setActive(i)}
+              onClick={() => setActive(i)}
+              className={`relative px-3 py-5 text-left transition-all duration-200 min-w-0 ${active === i ? "text-white" : "text-zinc-500 hover:text-zinc-300"}`}
+            >
+              <span className="text-[10px] font-bold text-[#7AC0CD]/40 block mb-1.5 tracking-wider">{item.num}</span>
+              <span className="text-sm font-semibold leading-snug block whitespace-nowrap overflow-hidden text-ellipsis">{item.title}</span>
+              <span className={`absolute bottom-0 left-0 right-0 h-[2px] transition-all duration-200 ${active === i ? "bg-[#7AC0CD]" : "bg-transparent"}`} />
+            </button>
+          ))}
+        </div>
+
+        {/* Detail panel */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={active}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.22 }}
+            className="border border-t-0 border-white/8 rounded-b-2xl overflow-hidden"
+          >
+            <div className="grid lg:grid-cols-[1fr_auto] gap-0">
+              <div className="p-8 lg:p-10">
+                <p className="text-[#7AC0CD] text-[11px] font-bold uppercase tracking-widest mb-4">{uc.title}</p>
+                <p className="text-white font-semibold text-xl leading-snug mb-6 max-w-xl">{uc.driver}</p>
+                <ul className="flex flex-col gap-3">
+                  {uc.points.map(pt => (
+                    <li key={pt} className="flex items-start gap-3 text-sm text-zinc-400 leading-relaxed">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#7AC0CD] shrink-0 mt-2" />
+                      {pt}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="flex items-end p-8 lg:p-10 border-t lg:border-t-0 lg:border-l border-white/5">
+                <Link href="/contact" className="inline-flex items-center gap-2 bg-[#7AC0CD] hover:bg-[#93cfd9] text-[#050e1d] font-bold text-sm px-6 py-3.5 rounded-xl transition-colors whitespace-nowrap">
+                  Discuss this use case
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+    </section>
+  );
+}
 
 export default function CollateralManagementPage() {
   return (
@@ -221,34 +294,7 @@ export default function CollateralManagementPage() {
       </section>
 
       {/* CCX Use Cases */}
-      <section className="bg-[#07111f] border-t border-white/5 py-24 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
-            <p className="text-xs font-bold text-[#7AC0CD] uppercase tracking-widest mb-3">CCX Use Cases</p>
-            <h2 className="font-[family-name:var(--font-playfair)] font-bold text-white" style={{ fontSize: "clamp(1.6rem, 3vw, 2.25rem)" }}>
-              Mobilise collateral globally — across every product and time zone
-            </h2>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {useCases.map((uc, i) => (
-              <motion.div key={uc.num} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.07 }}
-                className="bg-white/3 border border-white/8 rounded-2xl p-6 hover:border-[#7AC0CD]/30 transition-all flex flex-col gap-3">
-                <div className="flex items-start gap-3">
-                  <span className="text-[#7AC0CD]/30 font-bold text-2xl leading-none shrink-0">{uc.num}</span>
-                  <h3 className="text-white font-bold text-sm leading-snug">{uc.title}</h3>
-                </div>
-                <p className="text-[#7AC0CD] text-xs font-medium leading-snug">{uc.driver}</p>
-              </motion.div>
-            ))}
-          </div>
-          <div className="text-center mt-12">
-            <Link href="/contact" className="inline-flex items-center gap-2 bg-[#7AC0CD] hover:bg-[#93cfd9] text-[#050e1d] font-bold text-sm px-6 py-3.5 rounded-xl transition-colors">
-              Discuss your use case
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <CcxUseCases />
 
       {/* CCX Architecture */}
       <section className="bg-[#07111f] border-t border-white/5 py-20 px-6">
@@ -317,17 +363,20 @@ export default function CollateralManagementPage() {
       <section className="bg-[#003946]/30 border-t border-[#7AC0CD]/15 py-24 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-            <p className="text-xs font-bold text-[#7AC0CD] uppercase tracking-widest mb-4">Get Started</p>
+            <p className="text-xs font-bold text-[#7AC0CD] uppercase tracking-widest mb-4">Explore Further</p>
             <h2 className="font-[family-name:var(--font-playfair)] font-bold text-white mb-5" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.75rem)" }}>
-              Unlock your collateral&apos;s potential
+              Curious about what CCX can do for you?
             </h2>
             <p className="text-zinc-300 font-medium text-base mb-8 max-w-xl mx-auto">
-              Get in touch to explore how SWIAT can transform your collateral operations — freeing capital, eliminating manual processes, and connecting you to the network.
+              Whether you&apos;re just exploring or ready to go deeper — we&apos;re happy to share more. No commitment needed.
             </p>
-            <div className="flex justify-center">
+            <div className="flex flex-wrap gap-3 justify-center">
               <Link href="/contact" className="inline-flex items-center gap-2 bg-[#7AC0CD] hover:bg-[#93cfd9] text-[#050e1d] font-bold text-sm px-7 py-3.5 rounded-xl transition-colors">
-                Talk to an expert
+                Learn more
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </Link>
+              <Link href="/contact" className="inline-flex items-center gap-2 border border-[#7AC0CD]/40 text-[#7AC0CD] hover:bg-[#7AC0CD]/10 font-semibold text-sm px-7 py-3.5 rounded-xl transition-colors">
+                I&apos;m interested
               </Link>
             </div>
           </motion.div>

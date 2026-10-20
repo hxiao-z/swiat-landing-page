@@ -1,7 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+
+type Category = "All" | "Report" | "ECB Trial" | "Whitepaper";
 
 const papers = [
   {
@@ -112,7 +115,12 @@ const quotes = [
   },
 ];
 
+const categories: Category[] = ["All", "Report", "ECB Trial", "Whitepaper"];
+
 export default function ResearchPage() {
+  const [active, setActive] = useState<Category>("All");
+  const filtered = papers.filter(p => active === "All" || p.tag === active);
+
   return (
     <>
       {/* Page header */}
@@ -179,20 +187,35 @@ export default function ResearchPage() {
         <div className="max-w-6xl mx-auto">
           <div className="mb-12">
             <p className="text-xs font-bold text-[#7AC0CD] uppercase tracking-widest mb-2">Publications</p>
-            <h2 className="font-[family-name:var(--font-playfair)] font-bold text-white"
+            <h2 className="font-[family-name:var(--font-playfair)] font-bold text-white mb-8"
               style={{ fontSize: "clamp(1.6rem, 3vw, 2.25rem)" }}>
               Reports & Whitepapers
             </h2>
+            {/* Category filters */}
+            <div className="flex flex-wrap gap-2">
+              {categories.map(cat => (
+                <button
+                  key={cat}
+                  onClick={() => setActive(cat)}
+                  className={`text-xs font-semibold px-4 py-2 rounded-full border transition-all ${
+                    active === cat
+                      ? "bg-[#7AC0CD] text-[#050e1d] border-[#7AC0CD]"
+                      : "text-zinc-400 border-white/10 hover:border-[#7AC0CD]/30 hover:text-zinc-200"
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {papers.map((p, i) => (
+            {filtered.map((p, i) => (
               <motion.div
                 key={p.title}
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.07 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: i * 0.05 }}
                 className="group flex flex-col bg-white/3 border border-white/8 rounded-2xl p-6 hover:border-[#7AC0CD]/30 hover:bg-white/5 transition-all"
               >
                 {/* Tag + icon */}

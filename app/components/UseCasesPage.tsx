@@ -184,17 +184,26 @@ export default function UseCasesPage() {
           {/* Submit CTA */}
           <div className="mt-16 bg-[#003946]/30 border border-[#7AC0CD]/15 rounded-2xl p-8 text-center">
             <h3 className="font-[family-name:var(--font-playfair)] font-bold text-white text-xl mb-3">
-              Have a use case to share?
+              See something that fits your needs?
             </h3>
-            <p className="text-zinc-400 text-sm leading-relaxed max-w-md mx-auto mb-6">
-              If you are a network participant with a live transaction or pilot you would like to document, we would love to work with you on a use case report.
+            <p className="text-white/70 text-sm leading-relaxed max-w-md mx-auto mb-6">
+              Exploring how these apply to your institution? Our team is available to provide further detail.
             </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-[#7AC0CD] hover:bg-[#93cfd9] text-[#050e1d] font-bold text-sm px-6 py-3 rounded-xl transition-colors"
-            >
-              Get in touch
-            </Link>
+            <div className="flex flex-wrap gap-3 justify-center">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 bg-[#7AC0CD] hover:bg-[#93cfd9] text-[#050e1d] font-bold text-sm px-6 py-3 rounded-xl transition-colors"
+              >
+                I&apos;m interested
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 border border-[#7AC0CD]/40 text-[#7AC0CD] hover:bg-[#7AC0CD]/10 font-semibold text-sm px-6 py-3 rounded-xl transition-colors"
+              >
+                Request more info
+              </Link>
+            </div>
           </div>
         </div>
       </section>

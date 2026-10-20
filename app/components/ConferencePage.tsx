@@ -177,19 +177,20 @@ export default function ConferencePage() {
               className="font-[family-name:var(--font-playfair)] font-bold text-white mb-6"
               style={{ fontSize: "clamp(1.6rem, 3vw, 2.25rem)" }}
             >
-              Intentionally small. Genuinely useful.
+              Where the right conversations happen.
             </h2>
             <p className="text-zinc-300 leading-relaxed mb-4">
-              We keep the guest list short because the conversations matter more than the headcount. Each edition is a single day — no keynote theatre, no vendor stands. Just the people building and regulating the future of digital capital markets, in one room.
+              A single day, kept deliberately small so the conversations stay substantive.
             </p>
-            <p className="text-zinc-500 text-sm leading-relaxed mb-10">
-              Attendance is by invitation only. If you are a financial institution, regulator, or infrastructure provider interested in joining the network, reach out and we will be in touch ahead of the next edition.
+            <p className="text-white/60 text-sm leading-relaxed mb-10">
+              Attendance is by invitation only.
             </p>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 border border-[#7AC0CD]/40 text-[#7AC0CD] hover:bg-[#7AC0CD]/10 font-semibold text-sm px-7 py-3.5 rounded-xl transition-colors"
             >
-              Express interest in attending →
+              Request an invitation
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </Link>
           </motion.div>
         </div>
