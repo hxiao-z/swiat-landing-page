@@ -216,24 +216,15 @@ const navItems: NavItem[] = [
     label: "Resources",
     href: "#resources",
     simple: {
-      width: "w-[380px]",
+      width: "w-[220px]",
       columns: [
         {
           sections: [
             {
-              heading: "Content",
+              heading: "",
               items: [
                 { icon: icons.whitepaper, label: "Research & Whitepapers", href: "/solutions/research" },
                 { icon: icons.useCase, label: "Use Cases", href: "/use-cases" },
-              ],
-            },
-          ],
-        },
-        {
-          sections: [
-            {
-              heading: "Engage",
-              items: [
                 { icon: icons.conference, label: "SWIAT Conference", href: "/conference" },
                 { icon: icons.newsletter, label: "Newsletter", href: "/contact#newsletter" },
               ],
