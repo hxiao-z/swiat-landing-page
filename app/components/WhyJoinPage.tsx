@@ -47,12 +47,6 @@ const testimonials = [
     quote: "A great quote touches on culture, growth, or the unique feeling of building something that genuinely matters to the financial world.",
     tenure: "X years at SWIAT",
   },
-  {
-    name: "Team member name",
-    role: "Role / Department",
-    quote: "Replace this with a real voice from the team — the more specific and personal the better.",
-    tenure: "X years at SWIAT",
-  },
 ];
 
 const values = [
