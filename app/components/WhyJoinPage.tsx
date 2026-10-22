@@ -59,31 +59,37 @@ const values = [
   {
     emoji: "🏗️",
     title: "Build what matters",
+    short: "Real infrastructure, real impact on European capital markets.",
     desc: "We are not building features — we are building infrastructure that changes how European capital markets work. That weight is motivating, not intimidating.",
   },
   {
     emoji: "🤝",
     title: "Small team, big trust",
+    short: "Everyone owns something real — no layers, no bottlenecks.",
     desc: "Everyone owns something real here. There is no layer of middle management between your idea and its impact on the product or the network.",
   },
   {
     emoji: "🌍",
     title: "Frankfurt & beyond",
+    short: "Based in the heart of European finance, with a growing global network.",
     desc: "Our home is Frankfurt — the heart of European finance. Our network stretches across the continent and grows every quarter.",
   },
   {
     emoji: "📚",
     title: "Learn at the frontier",
+    short: "Blockchain, regulation, capital markets — all under one roof.",
     desc: "Blockchain, regulation, capital markets — the intersection is genuinely hard. You will learn things here that you cannot learn anywhere else.",
   },
   {
     emoji: "⚖️",
     title: "Regulated by design",
+    short: "Compliance as a competitive advantage, not a constraint.",
     desc: "We take compliance seriously — not as a constraint but as a competitive advantage. Working in a regulated environment teaches discipline that lasts a career.",
   },
   {
     emoji: "🎉",
     title: "A team that enjoys itself",
+    short: "We work hard and make sure there is room to celebrate together.",
     desc: "Replace this with something real — a ritual, a tradition, an inside joke. Something that shows what it actually feels like to be here.",
   },
 ];
@@ -182,11 +188,10 @@ export default function WhyJoinPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.07 }}
-                className="bg-white/3 border border-white/8 rounded-2xl p-6 hover:border-[#7AC0CD]/25 hover:bg-white/5 transition-all"
+                className="group bg-white/3 border border-white/8 rounded-2xl p-6 hover:border-[#7AC0CD]/25 hover:bg-white/5 transition-all"
               >
                 <span className="text-2xl mb-4 block">{v.emoji}</span>
-                <h3 className="text-white font-bold text-sm mb-2">{v.title}</h3>
-                <p className="text-zinc-400 text-xs leading-relaxed">{v.desc}</p>
+                <p className="text-white/80 text-sm leading-relaxed">{v.short}</p>
               </motion.div>
             ))}
           </div>

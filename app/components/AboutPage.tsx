@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -20,8 +21,8 @@ function PhotoBox({ label, aspect = "landscape" }: { label: string; aspect?: "la
 
 const pillars = [
   {
-    title: "The SWIAT Network",
-    desc: "A blockchain-based platform that is neutral, trustworthy, and purpose-built for regulated financial market participants — not a walled garden, but a shared infrastructure.",
+    title: "Europe's leading regulated platform",
+    desc: "Neutral, trustworthy, and purpose-built for regulated financial institutions — connecting participants without vendor lock-in.",
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
@@ -30,7 +31,7 @@ const pillars = [
   },
   {
     title: "Built for financial institutions",
-    desc: "Every design decision is made with the compliance, security, and operational requirements of regulated financial institutions in mind — from the architecture up.",
+    desc: "Compliance, security, and operations are built in from day one — so institutions can participate without changing how they work.",
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
@@ -38,8 +39,8 @@ const pillars = [
     ),
   },
   {
-    title: "Digital assets, real impact",
-    desc: "We enable the issuance, trading, and settlement of regulated digital assets — and bring traditional assets on-chain through advanced tokenization — with measurable outcomes for our network.",
+    title: "Real transactions, real impact",
+    desc: "€1B+ in settlement volume. 50+ institutions on the network. Live, regulated, and delivering results at scale.",
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -57,11 +58,71 @@ const shareholders = [
 
 const timeline = [
   { year: "2022", event: "SWIAT founded in Frankfurt by a group of banking and technology veterans." },
-  { year: "2023", event: "First live transaction on the SWIAT network — a milestone for blockchain-based settlement in Europe." },
+  { year: "2023", event: "First live transaction on the SWIAT platform — a milestone for regulated digital asset settlement in Europe." },
   { year: "2023", event: "Inaugural SWIAT Conference. First annual gathering of founding members and network participants." },
   { year: "2024", event: "ECB DLT trials completed. SWIAT demonstrates wholesale settlement interoperability with central bank systems." },
   { year: "2025", event: "BaFin grants SWIAT the licence to operate a crypto-securities registry under eWpG. Network surpasses 50 financial entities." },
 ];
+
+function NewsletterInline() {
+  const [email, setEmail] = useState("");
+  const [agreed, setAgreed] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (agreed && email) setSubmitted(true);
+  };
+
+  if (submitted) {
+    return (
+      <div className="flex items-center justify-center gap-2 text-[#7AC0CD] text-sm">
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+        </svg>
+        Thank you for subscribing!
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="flex flex-col gap-4 max-w-md mx-auto">
+      <div className="flex gap-3">
+        <input
+          type="email"
+          required
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="your@email.com"
+          className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-zinc-500 text-sm focus:outline-none focus:border-[#7AC0CD]/60 transition-all"
+        />
+        <button
+          type="submit"
+          className="bg-[#7AC0CD] hover:bg-[#93cfd9] text-[#050e1d] font-bold px-6 py-3 rounded-xl transition-colors text-sm shrink-0"
+        >
+          Subscribe
+        </button>
+      </div>
+      <label className="flex gap-3 cursor-pointer group text-left">
+        <div className="relative mt-0.5 shrink-0">
+          <input type="checkbox" checked={agreed} onChange={(e) => setAgreed(e.target.checked)} className="sr-only" />
+          <div className={`w-4 h-4 rounded border transition-all ${agreed ? "bg-[#7AC0CD] border-[#7AC0CD]" : "bg-white/5 border-white/20 group-hover:border-[#7AC0CD]/50"}`}>
+            {agreed && (
+              <svg className="w-2.5 h-2.5 text-white absolute top-0.5 left-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+              </svg>
+            )}
+          </div>
+        </div>
+        <span className="text-xs text-zinc-400 leading-relaxed">
+          I want to receive the SWIAT Newsletter and accept the{" "}
+          <a href="#" className="text-[#7AC0CD] hover:underline">data privacy guidelines</a>.
+          You can unsubscribe at any time.
+        </span>
+      </label>
+    </form>
+  );
+}
 
 export default function AboutPage() {
   return (
@@ -82,13 +143,13 @@ export default function AboutPage() {
               className="font-[family-name:var(--font-playfair)] font-bold text-white leading-tight mb-6"
               style={{ fontSize: "clamp(2rem, 4vw, 3.25rem)" }}
             >
-              Building the financial infrastructure of the future
+              Europe&apos;s leading platform for digital capital markets
             </h1>
             <p className="text-zinc-300 text-base leading-relaxed mb-3 font-medium max-w-2xl mx-auto">
-              SWIAT is a financial technology company headquartered in Frankfurt am Main, developing blockchain software for the financial industry.
+              SWIAT is a BaFin-regulated financial technology company headquartered in Frankfurt am Main — operating the most advanced platform for the issuance, trading, and settlement of digital assets in Europe.
             </p>
             <p className="text-zinc-500 leading-relaxed mb-8 max-w-2xl mx-auto">
-              Our team brings together deep banking and finance experience, united by a single vision: a DLT-based market infrastructure that makes real-time trading and settlement of regulated assets frictionless — for every participant, at global scale.
+              With over 50 financial institutions already on the network and €1B+ in settlement volume, we are setting the standard for how regulated capital markets move into the digital age.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <Link
@@ -136,10 +197,10 @@ export default function AboutPage() {
                 className="font-[family-name:var(--font-playfair)] text-white font-bold italic leading-snug mb-6"
                 style={{ fontSize: "clamp(1.4rem, 2.5vw, 2rem)" }}
               >
-                &ldquo;To create a financial infrastructure of the future that enables secure and frictionless real-time trading and settlement for all types of regulated assets on a global scale.&rdquo;
+                &ldquo;To build the leading platform for regulated digital assets — enabling secure, frictionless, real-time trading and settlement for every type of asset, for every institution, at global scale.&rdquo;
               </blockquote>
               <p className="text-zinc-400 leading-relaxed text-sm">
-                That mission has driven every product decision, every regulatory conversation, and every line of code since we were founded in 2022. It is not a tagline — it is the filter through which we make every decision.
+                That ambition has driven every product decision, every regulatory milestone, and every partnership since we were founded in 2022. We are not building for a niche — we are building for the future of capital markets.
               </p>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
@@ -158,10 +219,10 @@ export default function AboutPage() {
               className="font-[family-name:var(--font-playfair)] font-bold text-white"
               style={{ fontSize: "clamp(1.8rem, 3vw, 2.5rem)" }}
             >
-              Infrastructure, not a product
+              Pioneering digital finance in Europe
             </h2>
             <p className="text-zinc-500 text-sm mt-3 max-w-md mx-auto">
-              SWIAT does not compete with its network participants — it exists to serve them.
+              SWIAT is the neutral platform that brings institutions together — not a competitor, but the foundation they build on.
             </p>
           </div>
           <div className="grid sm:grid-cols-3 gap-5">
@@ -172,13 +233,13 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="bg-white/3 border border-white/8 rounded-2xl p-7 hover:border-[#7AC0CD]/25 hover:bg-white/5 transition-all"
+                className="group bg-white/3 border border-white/8 rounded-2xl p-7 hover:border-[#7AC0CD]/25 hover:bg-white/5 transition-all"
               >
                 <div className="w-10 h-10 rounded-xl bg-[#003946]/60 border border-[#7AC0CD]/20 flex items-center justify-center text-[#7AC0CD] mb-5">
                   {p.icon}
                 </div>
                 <h3 className="text-white font-bold text-base mb-3">{p.title}</h3>
-                <p className="text-zinc-400 text-sm leading-relaxed">{p.desc}</p>
+                <p className="text-zinc-400 text-sm leading-relaxed max-h-0 overflow-hidden opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-300">{p.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -270,43 +331,21 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Newsletter CTA */}
       <section className="bg-[#003946]/30 border-t border-[#7AC0CD]/15 py-24 px-6">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-2xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-            <p className="text-xs font-bold text-[#7AC0CD] uppercase tracking-widest mb-4">Get involved</p>
+            <p className="text-xs font-bold text-[#7AC0CD] uppercase tracking-widest mb-4">Stay Informed</p>
             <h2
-              className="font-[family-name:var(--font-playfair)] font-bold text-white mb-5"
+              className="font-[family-name:var(--font-playfair)] font-bold text-white mb-4"
               style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.75rem)" }}
             >
-              Join the network
+              Follow our journey
             </h2>
-            <p className="text-zinc-300 font-medium text-base mb-8 max-w-xl mx-auto">
-              Whether you want to connect as a participant, explore a partnership, or simply learn more — we would love to talk.
+            <p className="text-white/70 text-sm mb-8 max-w-md mx-auto">
+              Get the latest updates from SWIAT — new milestones, research, and network developments delivered to your inbox.
             </p>
-            <div className="flex flex-wrap gap-3 justify-center">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 bg-[#7AC0CD] hover:bg-[#93cfd9] text-[#050e1d] font-bold text-sm px-7 py-3.5 rounded-xl transition-colors"
-              >
-                Contact us
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
-              <Link
-                href="/team"
-                className="inline-flex items-center gap-2 border border-[#7AC0CD]/40 text-[#7AC0CD] hover:bg-[#7AC0CD]/10 font-semibold text-sm px-7 py-3.5 rounded-xl transition-colors"
-              >
-                Meet the team
-              </Link>
-              <Link
-                href="/partnership"
-                className="inline-flex items-center gap-2 border border-white/15 text-zinc-400 hover:text-white hover:border-white/25 font-semibold text-sm px-7 py-3.5 rounded-xl transition-colors"
-              >
-                Partnership
-              </Link>
-            </div>
+            <NewsletterInline />
           </motion.div>
         </div>
       </section>
