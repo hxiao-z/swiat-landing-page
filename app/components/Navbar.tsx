@@ -188,7 +188,7 @@ const navItems: NavItem[] = [
       width: "w-[720px]",
       columns: [
         {
-          heading: "Financial Applications",
+          heading: "Financial Use Cases",
           items: [
             { icon: icons.registry, label: "Registry Services", href: "/solutions/registry-services" },
             { icon: icons.collateral, label: "Collateral ConneX (CCX)", href: "/solutions/collateral-management" },
@@ -198,13 +198,13 @@ const navItems: NavItem[] = [
           heading: "Run Your Own dApp",
           items: [
             { icon: icons.tokenization, label: "Tokenisation & Settlement", href: "/solutions/tokenization" },
-            { icon: icons.access, label: "Access & Connectivity", href: "/solutions/swiat-access" },
+            { icon: icons.access, label: "SWIAT Access", href: "/solutions/swiat-access" },
           ],
         },
         {
           heading: "Professional Services",
           items: [
-            { icon: icons.whitepaper, label: "Advisory & Integration", href: "/services/advisory" },
+            { icon: icons.whitepaper, label: "Advisory", href: "/services/advisory" },
           ],
         },
       ],

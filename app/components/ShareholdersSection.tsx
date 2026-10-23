@@ -59,7 +59,7 @@ export default function ShareholdersSection() {
           transition={{ duration: 0.6 }}
           className="font-[family-name:var(--font-playfair)] text-4xl sm:text-5xl font-bold text-[#7AC0CD] mb-5"
         >
-          Our Shareholders
+          Backed by Europe&apos;s leading banks.
         </motion.h2>
 
         <motion.p
@@ -67,9 +67,9 @@ export default function ShareholdersSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="text-zinc-400 text-sm sm:text-base max-w-3xl mx-auto mb-16 leading-relaxed"
+          className="text-zinc-400 text-sm sm:text-base max-w-2xl mx-auto mb-16 leading-relaxed"
         >
-          Our esteemed shareholders who have joined our journey and are committed towards our goals and our shared vision in unlocking new opportunities in the landscape of digital assets.
+          Our shareholders are not passive investors — they are active participants on the network, co-building the standard for digital capital markets.
         </motion.p>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">

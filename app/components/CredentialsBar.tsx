@@ -33,7 +33,7 @@ const credentials = [
         <path d="M7 12h3M13.5 10.3l3-2.6M13.5 13.7l3 2.6" stroke="#7AC0CD" strokeWidth="1.5" strokeLinecap="round" />
       </svg>
     ),
-    label: "Built on RL1",
+    label: "Partnered with RL1",
     sub: "Europe's regulated blockchain network",
   },
   {
