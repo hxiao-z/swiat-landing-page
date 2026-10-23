@@ -8,7 +8,7 @@ const editions = [
     year: "2025",
     title: "SWIAT Conference 2025",
     location: "Frankfurt am Main",
-    desc: "The 2025 conference marked a year of expanding mandates — Project Sovereign demonstrated a compelling on-chain CSD use case with the Bank of Greece, secondary market activity scaled across participants, and BaFin formally announced the eWpG registry licence (with live transactions following in 2026).",
+    desc: "A year of expanding mandates — on-chain CSD use cases, scaled secondary market activity, and BaFin's eWpG registry licence.",
     highlights: ["Project Sovereign: on-chain CSD use case with Bank of Greece", "Secondary market activity scales across the network", "BaFin eWpG registry licence announced"],
     tag: "Most recent",
   },
@@ -16,7 +16,7 @@ const editions = [
     year: "2024",
     title: "SWIAT Conference 2024",
     location: "Frankfurt am Main",
-    desc: "A landmark year for the network — 8 live transactions within the ECB DLT trials, including the Siemens €300m digital bond issuance, the largest digital securities transaction in Europe. SWIAT demonstrated wholesale settlement interoperability with central bank systems.",
+    desc: "A landmark year — 8 live ECB DLT trial transactions, including the Siemens €300m digital bond, the largest in Europe.",
     highlights: ["8 transactions in the ECB DLT trials", "Siemens €300m issuance — largest digital bond in Europe", "Wholesale settlement interoperability with central bank systems"],
     tag: null,
   },
@@ -24,7 +24,7 @@ const editions = [
     year: "2023",
     title: "SWIAT Conference 2023",
     location: "Frankfurt am Main",
-    desc: "The inaugural SWIAT Conference marked the beginning of an annual tradition — a small, deliberate gathering of the founding members and early institutional partners who shaped the SWIAT network from the ground up.",
+    desc: "The first edition — founding members and early partners, gathered to shape what the network would become.",
     highlights: ["Founding member network launch", "Introduction of the SWIAT blockchain architecture", "First cross-institution settlement demo"],
     tag: "Inaugural",
   },
@@ -87,19 +87,15 @@ export default function ConferencePage() {
         </div>
       </section>
 
-      {/* Stats bar */}
-      <section className="bg-[#003946]/30 border-y border-[#7AC0CD]/15 py-8 px-6">
-        <div className="max-w-3xl mx-auto grid grid-cols-3 gap-6 text-center">
-          {[
-            { value: "3", label: "Annual editions" },
-            { value: "Invite only", label: "Every year" },
-            { value: "Frankfurt", label: "Home city" },
-          ].map(s => (
-            <div key={s.label}>
-              <p className="text-[#7AC0CD] font-bold text-2xl">{s.value}</p>
-              <p className="text-white font-semibold text-xs mt-1">{s.label}</p>
-            </div>
-          ))}
+      {/* Participants bar */}
+      <section className="bg-[#003946]/30 border-y border-[#7AC0CD]/15 py-10 px-6">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-[#7AC0CD] font-bold text-xs uppercase tracking-widest mb-5 text-center">Past Participants</p>
+          <div className="flex flex-wrap justify-center gap-2">
+            {["LBBW", "DekaBank", "DZ Bank", "Helaba", "COMYNO", "ABN AMRO", "NatWest", "Commerzbank", "BNP Paribas", "Siemens", "ING", "Deutsche Bank", "UniCredit", "Société Générale", "Bank of Greece", "Standard Chartered", "Natixis"].map(n => (
+              <span key={n} className="text-white/80 text-sm font-semibold border border-white/15 rounded-full px-4 py-2 hover:border-[#7AC0CD]/40 hover:text-white transition-colors">{n}</span>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -126,14 +122,8 @@ export default function ConferencePage() {
                 transition={{ duration: 0.5 }}
                 className={`grid lg:grid-cols-2 gap-10 items-start ${i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""}`}
               >
-                {/* Photo gallery */}
-                <div className="grid grid-cols-2 gap-3">
-                  <PhotoPlaceholder label={`${ed.year} — photo 1`} />
-                  <PhotoPlaceholder label={`${ed.year} — photo 2`} />
-                  <div className="col-span-2">
-                    <PhotoPlaceholder label={`${ed.year} — photo 3`} />
-                  </div>
-                </div>
+                {/* Photo */}
+                <PhotoPlaceholder label={`${ed.year} — photo`} />
 
                 {/* Text */}
                 <div className="pt-2">
@@ -152,7 +142,7 @@ export default function ConferencePage() {
                     </svg>
                     {ed.location}
                   </p>
-                  <p className="text-zinc-300 leading-relaxed mb-6 text-sm">{ed.desc}</p>
+                  <p className="text-zinc-500 leading-relaxed mb-6 text-sm">{ed.desc}</p>
                   <div className="flex flex-col gap-2.5">
                     {ed.highlights.map(h => (
                       <div key={h} className="flex items-start gap-3">
